@@ -1,0 +1,28 @@
+ls:
+    src/*:
+        .cs: camelCase | PascalCase
+        .js: camelCase | PascalCase
+        .vue: camelCase | PascalCase | kebab-case
+        .ts: camelCase | PascalCase | kebab-case | snake_case | SCREAMING_SNAKE_CASE
+        .tsx: camelCase | PascalCase
+        .d.ts: kebab-case
+        .mock.ts: kebab-case
+        .data.ts: camelCase | kebab-case
+        .test-d.ts: kebab-case
+        .less: kebab-case | PascalCase
+        .spec.ts: camelCase | PascalCase
+
+ignore:
+    - node_modules
+    - .git
+    - .circleci
+    - .github
+    - .vscode
+    - dist
+    - .local
+# https://ls-lint.org/2.2/configuration/the-rules.html#overview
+# lowercase 名称里的字母必须全是小写(字母、非字母字符)
+# camelCase 名称必须是 camelCase 风格(名称必须是 camelCase 风格)
+# kebab-case 名称必须是 kebab-case 风格(名称必须是 camelCase 风格)
+# PascalCase 名称必须是PascalCase 风格(字母、数字)
+# snake_case 名称必须是 snake_case 风格(小写字母、数字、下划线(_))

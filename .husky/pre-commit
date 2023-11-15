@@ -1,0 +1,18 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/common.sh"
+
+[ -n "$CI" ] && exit 0
+
+# check file name
+pnpm run lint:ls-lint
+
+# format pretter you change the file
+pnpm run lint:lint-staged
+
+# pretty
+pnpm run lint:lint-pretty
+
+# style
+pnpm run lint:stylelint
+
