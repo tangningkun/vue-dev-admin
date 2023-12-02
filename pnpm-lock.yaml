@@ -96,8 +96,8 @@ dependencies:
         specifier: ^3.3.4
         version: 3.3.8(typescript@5.2.2)
     vue-router:
-        specifier: ^4.0.13
-        version: 4.0.13(vue@3.3.8)
+        specifier: ^4.2.5
+        version: 4.2.5(vue@3.3.8)
 
 devDependencies:
     '@iconify/json':
@@ -10730,8 +10730,8 @@ packages:
             vue: 3.3.8(typescript@5.2.2)
         dev: true
 
-    /vue-router@4.0.13(vue@3.3.8):
-        resolution: { integrity: sha512-LmXrC+BkDRLak+d5xTMgUYraT3Nj0H/vCbP+7usGvIl9Viqd1UP6AsP0i69pSbn9O0dXK/xCdp4yPw21HqV9Jw== }
+    /vue-router@4.2.5(vue@3.3.8):
+        resolution: { integrity: sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw== }
         peerDependencies:
             vue: ^3.2.0
         dependencies:

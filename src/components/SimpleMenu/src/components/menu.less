@@ -14,7 +14,7 @@
         display: block;
         width: 2px;
         content: '';
-        background-color: @primary-color;
+        background-color: @colorPrimary;
     }
 }
 
@@ -39,13 +39,13 @@
             padding: 12px 20px;
             color: @menu-dark-subsidiary-color;
             cursor: pointer;
-            transition: all @transition-time @ease-in-out;
+            transition: all @transition-time @motionEaseInOut;
 
             &-icon {
                 position: absolute;
                 top: 50%;
                 right: 18px;
-                transition: transform @transition-time @ease-in-out;
+                transition: transform @transition-time @motionEaseInOut;
                 transform: translateY(-50%) rotate(-90deg);
             }
         }
@@ -62,7 +62,7 @@
 
                 &-selected {
                     color: #fff;
-                    background-color: @primary-color !important;
+                    background-color: @colorPrimary !important;
                 }
             }
         }
@@ -70,16 +70,16 @@
         &-light {
             .@{menu-prefix-cls}-item,
             .@{menu-prefix-cls}-submenu-title {
-                color: @text-color-base;
+                color: @colorText;
 
                 &:hover {
-                    color: @primary-color;
+                    color: @colorPrimary;
                 }
 
                 &-selected {
                     z-index: 2;
-                    color: @primary-color;
-                    background-color: fade(@primary-color, 10);
+                    color: @colorPrimary;
+                    background-color: fade(@colorPrimary, 10);
 
                     .light-border();
                 }
@@ -96,8 +96,8 @@
         width: 100%;
         padding: 0;
         margin: 0;
-        font-size: @font-size-base;
-        color: @text-color-base;
+        font-size: @fontSize;
+        color: @colorText;
         list-style: none;
         outline: none;
 
@@ -110,7 +110,7 @@
             background-color: #fff;
 
             .@{menu-prefix-cls}-submenu-active {
-                color: @primary-color !important;
+                color: @colorPrimary !important;
 
                 &-border {
                     .light-border();
@@ -129,7 +129,7 @@
             z-index: 1;
             display: flex;
             align-items: center;
-            font-size: @font-size-base;
+            font-size: @fontSize;
             color: inherit;
             list-style: none;
             cursor: pointer;
@@ -162,7 +162,7 @@
             cursor: pointer;
 
             &:hover {
-                color: @primary-color;
+                color: @colorPrimary;
             }
 
             .@{menu-prefix-cls}-tooltip {
@@ -199,7 +199,7 @@
         }
 
         &-submenu-title-icon {
-            transition: transform @transition-time @ease-in-out;
+            transition: transform @transition-time @motionEaseInOut;
         }
 
         &-vertical &-opened > * > &-submenu-title-icon {
@@ -218,13 +218,13 @@
         &-light&-vertical &-item {
             &-active:not(.@{menu-prefix-cls}-submenu) {
                 z-index: 2;
-                color: @primary-color;
-                background-color: fade(@primary-color, 10);
+                color: @colorPrimary;
+                background-color: fade(@colorPrimary, 10);
 
                 .light-border();
             }
             &-active.@{menu-prefix-cls}-submenu {
-                color: @primary-color;
+                color: @colorPrimary;
             }
         }
 
@@ -232,7 +232,7 @@
             > li.@{menu-prefix-cls}-item-active,
             .@{menu-prefix-cls}-submenu-active {
                 position: relative;
-                background-color: fade(@primary-color, 5);
+                background-color: fade(@colorPrimary, 5);
 
                 &::after {
                     display: none;
@@ -245,7 +245,7 @@
                     width: 3px;
                     height: 100%;
                     content: '';
-                    background-color: @primary-color;
+                    background-color: @colorPrimary;
                 }
             }
         }
@@ -255,7 +255,7 @@
             color: @menu-dark-subsidiary-color;
             &-active:not(.@{menu-prefix-cls}-submenu) {
                 color: #fff !important;
-                background-color: @primary-color !important;
+                background-color: @colorPrimary !important;
             }
 
             &:hover {
@@ -277,7 +277,7 @@
                     width: 3px;
                     height: 100%;
                     content: '';
-                    background-color: @primary-color;
+                    background-color: @colorPrimary;
                 }
 
                 .@{menu-prefix-cls}-submenu-collapse {

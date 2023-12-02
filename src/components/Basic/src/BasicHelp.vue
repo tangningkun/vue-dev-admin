@@ -96,11 +96,11 @@
         display: inline-block;
         margin-left: 6px;
         font-size: 14px;
-        color: @text-color-help-dark;
+        color: @colorText-help-dark;
         cursor: pointer;
 
         &:hover {
-            color: @primary-color;
+            color: @colorPrimary;
         }
 
         &__wrap {

@@ -113,10 +113,10 @@
 
     .@{header-prefix-cls} {
         display: flex;
-        height: @header-height;
+        height: @header-height !important;
         padding: 0 !important;
         margin-left: -1px;
-        line-height: @header-height;
+        line-height: @header-height !important;
         color: @white;
         background-color: @white;
         align-items: center;
@@ -244,7 +244,7 @@
             border-left: 1px solid @header-light-bottom-border-color;
 
             .@{header-prefix-cls}-logo {
-                color: @text-color-base;
+                color: @colorText;
 
                 &:hover {
                     background-color: @header-light-bg-hover-color;
@@ -253,7 +253,7 @@
 
             .@{header-prefix-cls}-action {
                 &__item {
-                    color: @text-color-base;
+                    color: @colorText;
 
                     .app-iconify {
                         padding: 0 10px;
@@ -267,15 +267,15 @@
 
                 &-icon,
                 span[role='img'] {
-                    color: @text-color-base;
+                    color: @colorText;
                 }
             }
         }
 
         &--dark {
             background-color: @header-dark-bg-color !important;
-            // border-bottom: 1px solid @border-color-base;
-            border-left: 1px solid @border-color-base;
+            // border-bottom: 1px solid @colorBorderSecondary;
+            border-left: 1px solid @colorBorderSecondary;
             .@{header-prefix-cls}-logo {
                 &:hover {
                     background-color: @header-dark-bg-hover-color;

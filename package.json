@@ -56,7 +56,7 @@
         "unocss": "^0.57.4",
         "vite-plugin-theme": "^0.8.6",
         "vue": "^3.3.4",
-        "vue-router": "^4.0.13"
+        "vue-router": "^4.2.5"
     },
     "devDependencies": {
         "@iconify/json": "^2.2.147",

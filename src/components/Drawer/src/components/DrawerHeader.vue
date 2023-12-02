@@ -59,7 +59,7 @@
             cursor: pointer;
 
             &:hover {
-                color: @primary-color;
+                color: @colorPrimary;
             }
         }
 

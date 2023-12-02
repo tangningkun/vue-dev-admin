@@ -48,6 +48,7 @@
         display: flex;
         justify-content: space-between;
         margin: 16px 0;
+        color: @colorText;
 
         &-select {
             width: 126px;

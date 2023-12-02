@@ -1,4 +1,4 @@
-// import type { ProjectConfig } from '/#/config';
+import type { ProjectConfig } from '/#/config';
 import { MenuTypeEnum, MenuModeEnum, TriggerEnum, MixSidebarTriggerEnum } from '/@/enums/menuEnum';
 import { CacheTypeEnum } from '/@/enums/cacheEnum';
 import { ContentEnum, PermissionModeEnum, ThemeEnum, RouterTransitionEnum, SettingButtonPositionEnum, SessionTimeoutProcessingEnum } from '/@/enums/appEnum';
@@ -9,8 +9,7 @@ import { primaryColor } from '../../build/config/themeConfig';
  * 项目设置
  * ! You need to clear the browser cache after the change 更改后需要清空浏览器缓存
  */
-// const setting: ProjectConfig = {
-const setting = {
+const setting: ProjectConfig = {
     /**
      *是否显示配置按钮
      * Whether to show the configuration button

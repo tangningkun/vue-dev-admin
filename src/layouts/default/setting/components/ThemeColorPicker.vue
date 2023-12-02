@@ -51,6 +51,7 @@
         flex-wrap: wrap;
         margin: 16px 0;
         justify-content: space-around;
+        color: @colorText;
 
         &__item {
             width: 20px;
@@ -64,7 +65,7 @@
             }
 
             &--active {
-                border: 1px solid lighten(@primary-color, 10%);
+                border: 1px solid lighten(@colorPrimary, 10%);
 
                 svg {
                     display: inline-block;

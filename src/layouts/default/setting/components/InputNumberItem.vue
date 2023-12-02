@@ -32,6 +32,7 @@
         display: flex;
         justify-content: space-between;
         margin: 16px 0;
+        color: @colorText;
 
         &-input-number {
             width: 126px;

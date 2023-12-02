@@ -124,7 +124,7 @@
             }
 
             .@{prefix-cls}__name {
-                color: @text-color-base;
+                color: @colorText;
             }
 
             .@{prefix-cls}__desc {

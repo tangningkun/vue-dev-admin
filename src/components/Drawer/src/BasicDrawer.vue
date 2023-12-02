@@ -167,14 +167,14 @@
 
         .ant-drawer-close {
             &:hover {
-                color: @error-color;
+                color: @colorError;
             }
         }
 
         .ant-drawer-body {
             height: calc(100% - @header-height);
             padding: 0;
-            background-color: @component-background;
+            background-color: @colorBgBase;
 
             .scrollbar__wrap {
                 padding: 16px !important;
@@ -194,7 +194,7 @@
             width: 100%;
             height: @detail-header-height;
             padding: 0;
-            border-top: 1px solid @border-color-base;
+            border-top: 1px solid @colorBorderSecondary;
             box-sizing: border-box;
         }
 

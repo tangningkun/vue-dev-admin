@@ -44,6 +44,7 @@
 
     .@{prefix-cls} {
         display: flex;
+        color: @colorText;
 
         &__item {
             position: relative;
@@ -148,7 +149,7 @@
             &:hover,
             &--active {
                 padding: 12px;
-                border: 2px solid @primary-color;
+                border: 2px solid @colorPrimary;
 
                 &::before,
                 &::after {

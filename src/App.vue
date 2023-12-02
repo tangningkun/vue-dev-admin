@@ -1,5 +1,5 @@
 <template>
-    <a-config-provider :theme="theme1" w-full h-full>
+    <a-config-provider :theme="configTheme" w-full h-full>
         <AppProvider>
             <RouterView />
             <!-- <default-layout /> -->
@@ -8,20 +8,34 @@
 </template>
 
 <script lang="ts" setup>
+    import { watch, reactive } from 'vue';
     import { AppProvider } from '/@/components/Application';
     import { theme } from 'ant-design-vue';
-    import convertLegacyToken from 'ant-design-vue/lib/theme/convertLegacyToken';
-    const { defaultAlgorithm, darkAlgorithm, compactAlgorithm, defaultSeed } = theme;
-    const theme1 = {
-        algorithm: [darkAlgorithm, compactAlgorithm],
-    };
-    console.log('defaultAlgorithm==>', defaultAlgorithm(defaultSeed));
-    console.log('darkAlgorithm==>', darkAlgorithm(defaultSeed, defaultAlgorithm(defaultSeed)));
-    const v3Token = convertLegacyToken(defaultAlgorithm(defaultSeed));
-    console.log('v3Token==>', v3Token);
-    const Darkv3Token = convertLegacyToken(darkAlgorithm(defaultSeed));
-    console.log('v3Token==>', Darkv3Token);
-    const aaa = { name: '张三', age: 13 };
-    console.log({ ...aaa, name: '李四' });
+    const { defaultAlgorithm, darkAlgorithm, compactAlgorithm } = theme;
+    import { useHeaderSetting } from '/@/hooks/setting/useHeaderSetting';
+    import { ThemeEnum } from './enums/appEnum';
+    const { getHeaderTheme } = useHeaderSetting();
+    const configTheme = reactive({
+        algorithm: [defaultAlgorithm, compactAlgorithm],
+    });
+
+    changeConfigTheme(getHeaderTheme.value);
+    /**
+     * 监听头部主题转换
+     */
+    watch(
+        () => getHeaderTheme,
+        (newTheme) => {
+            changeConfigTheme(newTheme.value);
+        },
+        { deep: true }
+    );
+    function changeConfigTheme(theme: ThemeEnum) {
+        if (theme === ThemeEnum.DARK) {
+            configTheme.algorithm = [darkAlgorithm, compactAlgorithm];
+        } else {
+            configTheme.algorithm = [defaultAlgorithm, compactAlgorithm];
+        }
+    }
 </script>
 <style lang="scss" scoped></style>

@@ -11,7 +11,7 @@
 
             <template v-if="getShowRedo || getShowQuick" #rightExtra>
                 <TabRefresh v-if="getShowRedo" />
-                <TabContent v-if="getShowQuick" is-extra :tab-item="$route" />
+                <TabContent v-if="getShowQuick" is-extra :tab-item="router.currentRoute.value" />
                 <FoldButton v-if="getShowFold" />
             </template>
         </a-tabs>
@@ -112,8 +112,8 @@
     html[data-theme='dark'] {
         .@{prefix-cls} {
             .ant-tabs-tab {
-                // border: 1px solid @border-color-base;
-                border: 1px solid #303030;
+                // border: 1px solid @colorBorderSecondary;
+                border: 1px solid @colorBorderSecondary;
             }
         }
     }
@@ -121,7 +121,7 @@
     html[data-theme='light'] {
         .@{prefix-cls} {
             .ant-tabs-tab:not(.ant-tabs-tab-active) {
-                border: 1px solid #d9d9d9;
+                border: 1px solid @colorBorderSecondary;
             }
         }
     }
@@ -130,8 +130,8 @@
         z-index: 10;
         height: @multiple-height + 2;
         line-height: @multiple-height + 2;
-        background-color: @component-background;
-        border-bottom: 1px solid @border-color-base;
+        background-color: @colorBgBase;
+        border-bottom: 1px solid @colorBorderSecondary;
 
         .ant-tabs-small {
             height: @multiple-height;
@@ -147,7 +147,7 @@
                 padding-top: 2px;
                 height: @multiple-height;
                 margin: 0;
-                background-color: @component-background;
+                background-color: @colorBgBase;
                 border: 0;
                 box-shadow: none;
 
@@ -160,8 +160,8 @@
                     height: calc(@multiple-height - 2px);
                     padding-right: 12px;
                     line-height: calc(@multiple-height - 2px);
-                    color: @text-color-base;
-                    background-color: @component-background;
+                    color: @colorText;
+                    background-color: @colorBgBase;
                     transition: none;
 
                     &:hover {
@@ -188,20 +188,20 @@
                     }
 
                     svg {
-                        fill: @text-color-base;
+                        fill: @colorText;
                     }
                 }
 
                 .ant-tabs-tab:not(.ant-tabs-tab-active) {
                     &:hover {
-                        color: @primary-color;
+                        color: @colorPrimary;
                     }
                 }
 
                 .ant-tabs-tab-active {
                     position: relative;
                     padding-left: 18px;
-                    background: @primary-color;
+                    background: @colorPrimary;
                     border: 0;
                     transition: none;
 
@@ -257,13 +257,13 @@
                 width: 36px;
                 height: @multiple-height;
                 line-height: @multiple-height;
-                color: @text-color-secondary;
+                color: @colorTextSecondary;
                 text-align: center;
                 cursor: pointer;
-                border-left: 1px solid @border-color-base;
+                border-left: 1px solid @colorBorderSecondary;
 
                 &:hover {
-                    color: @text-color-base;
+                    color: @colorText;
                 }
 
                 span[role='img'] {

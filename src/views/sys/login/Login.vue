@@ -106,7 +106,7 @@
     .@{prefix-cls} {
         min-height: 100%;
         overflow: hidden;
-        @media (max-width: @screen-xl) {
+        @media (max-width: @sizeXL) {
             background-color: #293146;
 
             .@{prefix-cls}-form {
@@ -126,7 +126,7 @@
             background-repeat: no-repeat;
             background-size: auto 100%;
             content: '';
-            @media (max-width: @screen-xl) {
+            @media (max-width: @sizeXL) {
                 display: none;
             }
         }
@@ -170,7 +170,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    color: @primary-color;
+                    color: @colorPrimary;
                 }
             }
         }
@@ -178,19 +178,19 @@
         input:not([type='checkbox']) {
             min-width: 360px;
 
-            @media (max-width: @screen-xl) {
+            @media (max-width: @sizeXL) {
                 min-width: 320px;
             }
 
-            @media (max-width: @screen-lg) {
+            @media (max-width: @sizeLG) {
                 min-width: 260px;
             }
 
-            @media (max-width: @screen-md) {
+            @media (max-width: @sizeMD) {
                 min-width: 240px;
             }
 
-            @media (max-width: @screen-sm) {
+            @media (max-width: @sizeSM) {
                 min-width: 160px;
             }
         }
@@ -201,7 +201,7 @@
 
         .ant-divider-inner-text {
             font-size: 12px;
-            color: @text-color-secondary;
+            color: @colorTextSecondary;
         }
     }
 </style>

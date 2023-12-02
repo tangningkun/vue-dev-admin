@@ -50,11 +50,11 @@
 
     html[data-theme='dark'] {
         .full-loading:not(.light) {
-            background-color: @modal-mask-bg;
+            background-color: @colorBgBase;
         }
     }
 
     .full-loading.dark {
-        background-color: @modal-mask-bg;
+        background-color: @colorBgBase;
     }
 </style>

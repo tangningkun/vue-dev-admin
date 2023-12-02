@@ -125,7 +125,7 @@
             // box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
 
             .ant-layout-sider-trigger {
-                color: @text-color-base;
+                color: @colorText;
                 border-top: 1px solid @border-color-light;
             }
         }
