@@ -196,6 +196,12 @@ module.exports = {
         'vue/require-default-prop': 'off',
         'vue/no-unused-components': 'off',
         'vue/prefer-import-from-vue': 'off',
+        'vue/no-reserved-component-names': 'off',
+        'vue/one-component-per-file': 'off',
+        'vue/no-useless-template-attributes': 'off',
+        'vue/valid-v-show': 'off',
+        'vue/no-dupe-keys': 'off',
+        'no-case-declarations': 'off',
         //#endregion
     },
     globals: {

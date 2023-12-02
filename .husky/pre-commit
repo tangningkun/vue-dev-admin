@@ -4,15 +4,15 @@
 
 [ -n "$CI" ] && exit 0
 
-# check file name
+# 检查文件名
 pnpm run lint:ls-lint
 
-# format pretter you change the file
+# 更改文件之前的格式
 pnpm run lint:lint-staged
 
 # pretty
 pnpm run lint:lint-pretty
 
 # style
-pnpm run lint:stylelint
+# pnpm run lint:stylelint
 

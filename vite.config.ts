@@ -4,6 +4,7 @@ import { ConfigEnv, loadEnv, UserConfig } from 'vite';
 import { wrapperEnv, pathResolve } from './build/utils';
 import { createVitePlugins } from './build/vite/plugin';
 import { createProxy } from './build/vite/proxy';
+import { generateModifyVars } from './build/generate/generateModifyVars';
 import pkg from './package.json';
 import dayjs from 'dayjs';
 import { OUTPUT_DIR } from './build/constant';
@@ -11,7 +12,7 @@ import { OUTPUT_DIR } from './build/constant';
 const { dependencies, devDependencies, name, version } = pkg;
 const __APP_INFO__ = {
     pkg: { dependencies, devDependencies, name, version },
-    lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss')
+    lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss'),
 };
 
 export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
@@ -41,11 +42,6 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
          */
         root,
         /**
-         * Array of vite plugins to use.
-         * vite插件数组。
-         */
-        plugins: createVitePlugins(viteEnv, isBuild),
-        /**
          * Configure resolver
          * 配置解析器
          */
@@ -54,18 +50,18 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
                 // /@/xxxx => src/xxxx
                 {
                     find: /\/@\//,
-                    replacement: pathResolve('src') + '/'
+                    replacement: pathResolve('src') + '/',
                 },
                 // /#/xxxx => types/xxxx
                 {
                     find: /\/#\//,
-                    replacement: pathResolve('types') + '/'
+                    replacement: pathResolve('types') + '/',
                 },
                 {
                     find: 'devextreme/ui',
-                    replacement: 'devextreme/esm/ui'
-                }
-            ]
+                    replacement: 'devextreme/esm/ui',
+                },
+            ],
         },
         server: {
             https: false,
@@ -76,14 +72,14 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
             /**自动打开浏览器页面 */
             open: true,
             // 从.env加载代理配置
-            proxy: createProxy(VITE_PROXY)
+            proxy: createProxy(VITE_PROXY),
         },
         /**
          * 转换选项传递给esbuild。
          * 或设置为' false '禁用esbuild。
          */
         esbuild: {
-            drop: VITE_DROP_CONSOLE ? ['console', 'debugger'] : []
+            drop: VITE_DROP_CONSOLE ? ['console', 'debugger'] : [],
         },
         build: {
             target: 'es2015',
@@ -102,19 +98,35 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
             // },
             // Turning off brotliSize display can slightly reduce packaging time
             reportCompressedSize: false,
-            chunkSizeWarningLimit: 2000
+            chunkSizeWarningLimit: 2000,
         },
         define: {
-            __APP_INFO__: JSON.stringify(__APP_INFO__)
+            __APP_INFO__: JSON.stringify(__APP_INFO__),
+            __COLOR_PLUGIN_OUTPUT_FILE_NAME__: undefined,
+            __PROD__: true,
+            __COLOR_PLUGIN_OPTIONS__: {},
         },
         css: {
             preprocessorOptions: {
                 //define global scss variable
-                scss: {
+                // scss: {
+                //     javascriptEnabled: true,
+                //     additionalData: `@import '/@/styles/variables.scss';`,
+                // },
+                less: {
+                    modifyVars: generateModifyVars(),
                     javascriptEnabled: true,
-                    additionalData: `@import '/@/styles/variables.scss';`
-                }
-            }
-        }
+                },
+            },
+        },
+        /**
+         * Array of vite plugins to use.
+         * vite插件数组。
+         */
+        plugins: createVitePlugins(viteEnv, isBuild),
+        optimizeDeps: {
+            // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
+            include: ['@vue/runtime-core', '@vue/shared', '@iconify/iconify', 'ant-design-vue/es/locale/zh_CN', 'ant-design-vue/es/locale/en_US'],
+        },
     };
 };

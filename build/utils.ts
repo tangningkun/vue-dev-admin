@@ -98,7 +98,11 @@ export function getEnvConfig(match = 'VITE_GLOB_', confFiles = getConfFiles()) {
 export function getRootPath(...dir: string[]) {
     return path.resolve(process.cwd(), ...dir);
 }
-
+/**
+ *
+ * @param dir
+ * @returns
+ */
 export function pathResolve(dir: string) {
     return path.resolve(process.cwd(), '.', dir);
 }

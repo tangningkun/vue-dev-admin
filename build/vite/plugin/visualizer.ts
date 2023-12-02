@@ -17,8 +17,8 @@ export function configVisualizerConfig(env: ViteEnv) {
                 filename: './node_modules/.cache/visualizer/stats.html', //分析图生成的文件名
                 open: true, //如果存在本地服务端口，将在打包后自动展示\
                 gzipSize: compressList.includes('gzip'),
-                brotliSize: compressList.includes('brotli')
-            })
+                brotliSize: compressList.includes('brotli'),
+            }) as PluginOption
         );
     }
     return plugins;

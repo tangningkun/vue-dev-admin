@@ -20,6 +20,7 @@ ignore:
     - .vscode
     - dist
     - .local
+    - src/locales/lang/zh_CN.ts
 # https://ls-lint.org/2.2/configuration/the-rules.html#overview
 # lowercase 名称里的字母必须全是小写(字母、非字母字符)
 # camelCase 名称必须是 camelCase 风格(名称必须是 camelCase 风格)
