@@ -126,7 +126,7 @@
 
             .ant-layout-sider-trigger {
                 color: @colorText;
-                border-top: 1px solid @border-color-light;
+                border-top: 1px solid @colorBorderSecondary;
             }
         }
 

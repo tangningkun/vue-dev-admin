@@ -33,7 +33,9 @@ declare module 'vue' {
         AppProvider: typeof import('./src/components/Application/src/AppProvider.vue')['default'];
         ASelect: typeof import('ant-design-vue/es')['Select'];
         ASkeleton: typeof import('ant-design-vue/es')['Skeleton'];
+        ASpace: typeof import('ant-design-vue/es')['Space'];
         ASpin: typeof import('ant-design-vue/es')['Spin'];
+        AStyleProvider: typeof import('ant-design-vue/es')['StyleProvider'];
         ASubMenu: typeof import('ant-design-vue/es')['SubMenu'];
         ASwitch: typeof import('ant-design-vue/es')['Switch'];
         ATabPane: typeof import('ant-design-vue/es')['TabPane'];

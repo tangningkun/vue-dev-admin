@@ -176,7 +176,7 @@
                     color: rgb(0 0 0 / 65%);
 
                     &:hover {
-                        color: @colorPrimary;
+                        color: @themePrimaryColor;
                     }
                 }
             }

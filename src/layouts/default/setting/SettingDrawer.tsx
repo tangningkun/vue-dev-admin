@@ -84,7 +84,10 @@ export default defineComponent({
         function renderSiderTheme() {
             return <ThemeColorPicker colorList={SIDE_BAR_BG_COLOR_LIST} def={unref(getMenuBgColor)} event={HandlerEnum.MENU_THEME} />;
         }
-
+        /**
+         *
+         * @returns
+         */
         function renderMainTheme() {
             return <ThemeColorPicker colorList={APP_PRESET_COLOR_LIST} def={unref(getThemeColor)} event={HandlerEnum.CHANGE_THEME_COLOR} />;
         }
@@ -176,7 +179,9 @@ export default defineComponent({
                 </>
             );
         }
-
+        /**
+         * @description:
+         */
         function renderContent() {
             return (
                 <>
@@ -204,7 +209,9 @@ export default defineComponent({
                 </>
             );
         }
-
+        /**
+         * @description:
+         */
         function renderTransition() {
             return (
                 <>

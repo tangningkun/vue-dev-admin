@@ -5,7 +5,7 @@ export const prefixCls = 'dev';
 export const darkMode = ThemeEnum.LIGHT;
 
 // 应用主题预设颜色
-export const APP_PRESET_COLOR_LIST: string[] = ['#0960bd', '#0084f4', '#009688', '#536dfe', '#ff5c93', '#ee4f12', '#0096c7', '#9c27b0', '#ff9800'];
+export const APP_PRESET_COLOR_LIST: string[] = ['#1661ab', '#0084f4', '#009688', '#536dfe', '#ff5c93', '#ee4f12', '#0096c7', '#9c27b0', '#ff9800'];
 
 // 标题预设颜色
 export const HEADER_PRESET_BG_COLOR_LIST: string[] = ['#ffffff', '#151515', '#009688', '#5172DC', '#018ffb', '#409eff', '#e74c3c', '#24292e', '#394664', '#001529', '#383f45'];

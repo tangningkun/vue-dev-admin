@@ -67,7 +67,7 @@
         }
 
         &.light &__title {
-            color: @colorPrimary;
+            color: @themePrimaryColor;
         }
 
         &.dark &__title {

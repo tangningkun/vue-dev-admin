@@ -376,7 +376,7 @@
                     color: rgb(0 0 0 / 65%);
 
                     &--active {
-                        color: @colorPrimary;
+                        color: @themePrimaryColor;
                         background-color: unset;
                     }
                 }
@@ -462,7 +462,7 @@
                         left: 0;
                         width: 3px;
                         height: 100%;
-                        background-color: @colorPrimary;
+                        background-color: @themePrimaryColor;
                         content: '';
                     }
                 }
@@ -514,7 +514,7 @@
                 height: @header-height;
                 // margin-left: -6px;
                 font-size: 18px;
-                color: @colorPrimary;
+                color: @themePrimaryColor;
                 border-bottom: 1px solid rgb(238 238 238);
                 opacity: 0;
                 transition: unset;

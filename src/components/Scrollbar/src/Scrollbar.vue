@@ -60,7 +60,7 @@
 
             provide('scroll-bar-wrap', wrap);
 
-            const style = computed(() => {
+            const style: any = computed(() => {
                 if (Array.isArray(props.wrapStyle)) {
                     return toObject(props.wrapStyle);
                 }

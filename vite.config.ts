@@ -102,7 +102,7 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
         },
         define: {
             __APP_INFO__: JSON.stringify(__APP_INFO__),
-            __COLOR_PLUGIN_OUTPUT_FILE_NAME__: undefined,
+            __COLOR_PLUGIN_OUTPUT_FILE_NAME__: 'undefined',
             __PROD__: true,
             __COLOR_PLUGIN_OPTIONS__: {},
         },

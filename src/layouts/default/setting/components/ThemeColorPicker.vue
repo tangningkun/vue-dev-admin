@@ -37,6 +37,7 @@
             type: String,
         },
     });
+    console.log('ThemeColorPicker:props', props);
     const { prefixCls } = useDesign('setting-theme-picker');
 
     function handleClick(color: string) {

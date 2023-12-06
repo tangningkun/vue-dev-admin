@@ -11,8 +11,7 @@ export async function changeTheme(color: string) {
         color,
     });
 
-    const res = await replaceStyleVariables({
+    await replaceStyleVariables({
         colorVariables: [...getThemeColors(color), ...colors],
     });
-    return res;
 }

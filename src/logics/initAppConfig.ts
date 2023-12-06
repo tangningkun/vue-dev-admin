@@ -6,11 +6,10 @@ import type { ProjectConfig } from '/#/config';
 import { PROJ_CFG_KEY } from '/@/enums/cacheEnum';
 import projectSetting from '/@/settings/projectSetting';
 
-import { updateHeaderBgColor, updateSidebarBgColor } from '/@/logics/theme/updateBackground';
+import { updateHeaderBgColor, updateSidebarBgColor, updateThemePrimaryColor } from '/@/logics/theme/updateBackground';
 import { updateColorWeak } from '/@/logics/theme/updateColorWeak';
 import { updateGrayMode } from '/@/logics/theme/updateGrayMode';
 import { updateDarkTheme } from '/@/logics/theme/dark';
-import { changeTheme } from '/@/logics/theme';
 
 import { useAppStore } from '/@/store/modules/app';
 
@@ -27,7 +26,8 @@ import { ThemeEnum } from '/@/enums/appEnum';
 /**
  * 初始项目配置
  */
-export function initAppConfigStore() {
+export async function initAppConfigStore() {
+    debugger;
     const localeStore = useLocaleStore();
     const appStore = useAppStore();
     let projCfg: ProjectConfig = Persistent.getLocal(PROJ_CFG_KEY) as ProjectConfig;
@@ -43,18 +43,23 @@ export function initAppConfigStore() {
     } = projCfg;
     try {
         if (themeColor && themeColor !== primaryColor) {
-            changeTheme(themeColor);
+            updateThemePrimaryColor(themeColor);
+        } else {
+            updateThemePrimaryColor(primaryColor);
         }
 
         grayMode && updateGrayMode(grayMode);
         colorWeak && updateColorWeak(colorWeak);
-    } catch (error) {
-        console.log(error);
-    }
+    } catch (error) {}
     appStore.setProjectConfig(projCfg);
 
+    // if (appStore.getProjectConfig.algorithm.length === 0) {
+    //     appStore.setProjectConfig({
+    //         algorithm: [theme.defaultAlgorithm, theme.compactAlgorithm],
+    //     });
+    // }
     // init dark mode
-    updateDarkTheme(darkMode);
+    await updateDarkTheme(darkMode);
     if (darkMode === ThemeEnum.DARK) {
         updateHeaderBgColor();
         updateSidebarBgColor();

@@ -116,10 +116,9 @@
 
                 return <AppLogo showTitle={!unref(getCollapsed)} class={unref(getLogoClass)} theme={unref(getComputedMenuTheme)} />;
             }
-
+            console.log('props.isHorizontal', props.isHorizontal);
             function renderMenu() {
                 const { menus, ...menuProps } = unref(getCommonProps);
-                // console.log(menus);
                 if (!menus || !menus.length) {
                     return null;
                 }
@@ -156,6 +155,7 @@
         &-logo {
             height: @header-height;
             padding: 10px 4px 10px 10px;
+            color: @themePrimaryColor;
 
             img {
                 width: @logo-width;

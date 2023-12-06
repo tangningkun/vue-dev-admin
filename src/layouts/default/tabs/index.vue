@@ -109,22 +109,22 @@
 <style lang="less">
     @prefix-cls: ~'@{namespace}-multiple-tabs';
 
-    html[data-theme='dark'] {
-        .@{prefix-cls} {
-            .ant-tabs-tab {
-                // border: 1px solid @colorBorderSecondary;
-                border: 1px solid @colorBorderSecondary;
-            }
-        }
-    }
+    // html[data-theme='dark'] {
+    //     .@{prefix-cls} {
+    //         .ant-tabs-tab {
+    //             // border: 1px solid @colorBorderSecondary;
+    //             border: 1px solid @colorBorderSecondary;
+    //         }
+    //     }
+    // }
 
-    html[data-theme='light'] {
-        .@{prefix-cls} {
-            .ant-tabs-tab:not(.ant-tabs-tab-active) {
-                border: 1px solid @colorBorderSecondary;
-            }
-        }
-    }
+    // html[data-theme='light'] {
+    //     .@{prefix-cls} {
+    //         .ant-tabs-tab:not(.ant-tabs-tab-active) {
+    //             border: 1px solid @colorBorderSecondary;
+    //         }
+    //     }
+    // }
 
     .@{prefix-cls} {
         z-index: 10;
@@ -194,14 +194,14 @@
 
                 .ant-tabs-tab:not(.ant-tabs-tab-active) {
                     &:hover {
-                        color: @colorPrimary;
+                        color: @themePrimaryColor;
                     }
                 }
 
                 .ant-tabs-tab-active {
                     position: relative;
                     padding-left: 18px;
-                    background: @colorPrimary;
+                    background-color: @themePrimaryColor !important;
                     border: 0;
                     transition: none;
 

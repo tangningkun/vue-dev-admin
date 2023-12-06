@@ -61,7 +61,7 @@
             width: 3px;
             height: 16px;
             margin-right: 4px;
-            background-color: @colorPrimary;
+            background-color: @themePrimaryColor;
             content: '';
         }
 

@@ -8,7 +8,7 @@ import { viteThemePlugin, antdDarkThemePlugin, mixLighten, mixDarken, tinycolor 
 import { getThemeColors, generateColors } from '../../config/themeConfig';
 import { generateModifyVars } from '../../generate/generateModifyVars';
 
-export function configThemePlugin(isBuild: boolean): PluginOption[] {
+export function configThemePlugin(): PluginOption[] {
     const colors = generateColors({
         mixDarken,
         mixLighten,
@@ -24,8 +24,7 @@ export function configThemePlugin(isBuild: boolean): PluginOption[] {
                 //path.resolve(process.cwd(), 'node_modules/ant-design-vue/dist/antd.dark.less'),
                 path.resolve(process.cwd(), 'src/styles/index.less'),
             ],
-            filter: (id) => (isBuild ? !id.endsWith('antd.less') : true),
-            extractCss: false,
+            // filter: (id) => (isBuild ? !id.endsWith('antd.less') : true),
             darkModifyVars: {
                 ...generateModifyVars(true),
             },

@@ -149,7 +149,7 @@
             &:hover,
             &--active {
                 padding: 12px;
-                border: 2px solid @colorPrimary;
+                border: 2px solid @themePrimaryColor;
 
                 &::before,
                 &::after {

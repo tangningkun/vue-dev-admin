@@ -8,6 +8,9 @@ dependencies:
     '@ant-design/colors':
         specifier: ^7.0.0
         version: 7.0.0
+    '@ant-design/cssinjs':
+        specifier: ^1.18.0
+        version: 1.18.0(react-dom@18.2.0)(react@18.2.0)
     '@ant-design/icons-vue':
         specifier: ^7.0.1
         version: 7.0.1(vue@3.3.8)
@@ -280,6 +283,23 @@ packages:
         resolution: { integrity: sha512-iVm/9PfGCbC0dSMBrz7oiEXZaaGH7ceU40OJEfKmyuzR9R5CRimJYPlRiFtMQGQcbNMea/ePcoIebi4ASGYXtg== }
         dependencies:
             '@ctrl/tinycolor': 3.6.1
+        dev: false
+
+    /@ant-design/cssinjs@1.18.0(react-dom@18.2.0)(react@18.2.0):
+        resolution: { integrity: sha512-NXzfnNjJgpn+L6d0cD2cS14Tsqs46Bsua6PwVMlmN+F0OEoa9PhJRwUWmI+HyIrc4cgVZVfQTDpXC0p07Jmglw== }
+        peerDependencies:
+            react: '>=16.0.0'
+            react-dom: '>=16.0.0'
+        dependencies:
+            '@babel/runtime': 7.23.2
+            '@emotion/hash': 0.8.0
+            '@emotion/unitless': 0.7.5
+            classnames: 2.3.2
+            csstype: 3.1.2
+            rc-util: 5.38.1(react-dom@18.2.0)(react@18.2.0)
+            react: 18.2.0
+            react-dom: 18.2.0(react@18.2.0)
+            stylis: 4.3.0
         dev: false
 
     /@ant-design/icons-svg@4.3.1:
@@ -1688,8 +1708,16 @@ packages:
         engines: { node: '>=10' }
         dev: false
 
+    /@emotion/hash@0.8.0:
+        resolution: { integrity: sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow== }
+        dev: false
+
     /@emotion/hash@0.9.1:
         resolution: { integrity: sha512-gJB6HLm5rYwSLI6PQa+X1t5CFGrv1J1TWG+sOyMCeKz2ojaj6Fnl/rZEspogG+cvqbt4AE/2eIyD2QfLKTBNlQ== }
+        dev: false
+
+    /@emotion/unitless@0.7.5:
+        resolution: { integrity: sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg== }
         dev: false
 
     /@emotion/unitless@0.8.1:
@@ -3801,6 +3829,10 @@ packages:
             isobject: 3.0.1
             static-extend: 0.1.2
         dev: true
+
+    /classnames@2.3.2:
+        resolution: { integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw== }
+        dev: false
 
     /clean-css@5.3.2:
         resolution: { integrity: sha512-JVJbM+f3d3Q704rF4bqQ5UUyTtuJ0JRKNbTKVEeujCCBoMdkEi+V+e8oktO9qGQNSvHrFTM6JZRXrUvGR1czww== }
@@ -8708,6 +8740,39 @@ packages:
             safe-buffer: 5.2.1
         dev: true
 
+    /rc-util@5.38.1(react-dom@18.2.0)(react@18.2.0):
+        resolution: { integrity: sha512-e4ZMs7q9XqwTuhIK7zBIVFltUtMSjphuPPQXHoHlzRzNdOwUxDejo0Zls5HYaJfRKNURcsS/ceKVULlhjBrxng== }
+        peerDependencies:
+            react: '>=16.9.0'
+            react-dom: '>=16.9.0'
+        dependencies:
+            '@babel/runtime': 7.23.2
+            react: 18.2.0
+            react-dom: 18.2.0(react@18.2.0)
+            react-is: 18.2.0
+        dev: false
+
+    /react-dom@18.2.0(react@18.2.0):
+        resolution: { integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g== }
+        peerDependencies:
+            react: ^18.2.0
+        dependencies:
+            loose-envify: 1.4.0
+            react: 18.2.0
+            scheduler: 0.23.0
+        dev: false
+
+    /react-is@18.2.0:
+        resolution: { integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w== }
+        dev: false
+
+    /react@18.2.0:
+        resolution: { integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ== }
+        engines: { node: '>=0.10.0' }
+        dependencies:
+            loose-envify: 1.4.0
+        dev: false
+
     /read-pkg-up@1.0.1:
         resolution: { integrity: sha512-WD9MTlNtI55IwYUS27iHh9tK3YoIVhxis8yKhLpTqWtml739uXc9NWTpxoHkfZf3+DkCCsXox94/VWZniuZm6A== }
         engines: { node: '>=0.10.0' }
@@ -9144,6 +9209,12 @@ packages:
         resolution: { integrity: sha512-0s+oAmw9zLl1V1cS9BtZN7JAd0cW5e0QH4W3LWEK6a4LaLEA2OTpGYWDY+6XasBLtz6wkm3u1xRw95mRuJ59WA== }
         requiresBuild: true
         optional: true
+
+    /scheduler@0.23.0:
+        resolution: { integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw== }
+        dependencies:
+            loose-envify: 1.4.0
+        dev: false
 
     /scroll-into-view-if-needed@2.2.31:
         resolution: { integrity: sha512-dGCXy99wZQivjmjIqihaBQNjryrz5rueJY7eHfTdyWEiR4ttYpsajb14rn9s5d4DY4EcY6+4+U/maARBXJedkA== }

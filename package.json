@@ -27,6 +27,7 @@
     },
     "dependencies": {
         "@ant-design/colors": "^7.0.0",
+        "@ant-design/cssinjs": "^1.18.0",
         "@ant-design/icons-vue": "^7.0.1",
         "@commitlint/cli": "^18.4.1",
         "@commitlint/config-conventional": "^18.4.0",

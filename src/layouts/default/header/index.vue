@@ -197,6 +197,10 @@
                     &:hover {
                         background-color: @header-dark-bg-hover-color;
                     }
+
+                    svg {
+                        fill: @white;
+                    }
                 }
             }
         }
@@ -283,6 +287,8 @@
             }
 
             .@{header-prefix-cls}-action {
+                color: @white;
+
                 &__item {
                     .app-iconify {
                         padding: 0 10px;

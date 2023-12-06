@@ -19,7 +19,7 @@ async function bootstrapApp() {
     setupStore(app);
 
     // 初始化内部系统配置
-    initAppConfigStore();
+    await initAppConfigStore();
 
     // // Register global components
     // registerGlobComp(app);

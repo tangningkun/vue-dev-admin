@@ -1,11 +1,12 @@
 import { HandlerEnum } from './enum';
-import { updateHeaderBgColor, updateSidebarBgColor } from '/@/logics/theme/updateBackground';
+import { updateHeaderBgColor, updateSidebarBgColor, updateThemePrimaryColor } from '/@/logics/theme/updateBackground';
+// import { updateHeaderBgColor, updateSidebarBgColor } from '/@/logics/theme/updateBackground';
 import { updateColorWeak } from '/@/logics/theme/updateColorWeak';
 import { updateGrayMode } from '/@/logics/theme/updateGrayMode';
 
 import { useAppStore } from '/@/store/modules/app';
 import { ProjectConfig } from '/#/config';
-import { changeTheme } from '/@/logics/theme';
+// import { changeTheme } from '/@/logics/theme';
 import { updateDarkTheme } from '/@/logics/theme/dark';
 import { useRootSetting } from '/@/hooks/setting/useRootSetting';
 
@@ -43,7 +44,9 @@ export function handler(event: HandlerEnum, value: any): DeepPartial<ProjectConf
             if (getThemeColor.value === value) {
                 return {};
             }
-            changeTheme(value);
+            updateThemePrimaryColor(value);
+            // return {};
+            // changeTheme(value);
 
             return { themeColor: value };
 

@@ -100,7 +100,7 @@
         cursor: pointer;
 
         &:hover {
-            color: @colorPrimary;
+            color: @themePrimaryColor;
         }
 
         &__wrap {

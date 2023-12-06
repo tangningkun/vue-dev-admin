@@ -1,7 +1,7 @@
 import { toggleClass } from './util';
 
 /**
- * Change the status of the project's color weakness mode
+ * 更改项目的弱色模式的状态
  * @param colorWeak
  */
 export function updateColorWeak(colorWeak: boolean) {

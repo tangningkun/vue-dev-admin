@@ -53,7 +53,7 @@
         padding: 10px;
         color: @white;
         cursor: pointer;
-        background-color: @colorPrimary;
+        background-color: @themePrimaryColor;
         border-radius: 6px 0 0 6px;
         justify-content: center;
         align-items: center;
