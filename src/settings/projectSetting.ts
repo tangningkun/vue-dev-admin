@@ -148,7 +148,7 @@ const setting: ProjectConfig = {
          *侧边栏菜单背景色
          * sidebar menu bg color
          */
-        bgColor: SIDE_BAR_BG_COLOR_LIST[0],
+        bgColor: SIDE_BAR_BG_COLOR_LIST[3],
         /**
          *是否固定左侧菜单
          * Whether to fix the left menu
@@ -205,7 +205,7 @@ const setting: ProjectConfig = {
          *菜单主题
          * Menu theme
          */
-        theme: ThemeEnum.DARK,
+        theme: ThemeEnum.LIGHT,
         /**
          *拆分菜单
          * Split menu

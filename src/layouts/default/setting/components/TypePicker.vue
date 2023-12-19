@@ -44,7 +44,7 @@
 
     .@{prefix-cls} {
         display: flex;
-        color: @colorText;
+        // color: @colorText;
 
         &__item {
             position: relative;

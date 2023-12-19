@@ -7,6 +7,7 @@ import { localeSetting } from '/@/settings/localeSetting';
 import { useLocaleStoreWithOut } from '/@/store/modules/locale';
 
 const { fallback, availableLocales } = localeSetting;
+import { locale as dxLocal, loadMessages } from 'devextreme/localization';
 
 export let i18n: ReturnType<typeof createI18n>;
 
@@ -20,6 +21,26 @@ async function createI18nOptions(): Promise<I18nOptions> {
     setLoadLocalePool((loadLocalePool) => {
         loadLocalePool.push(locale);
     });
+    //#region 【处理devextreme语言】
+    /**
+     * 想使用动态引用的方法，
+     * @rollup/plugin-dynamic-import-vars改包只支持path 前含'./ or ../'开头 无法支撑
+     */
+    switch (locale) {
+        case 'zh_CN': {
+            const dxMessage = await import('devextreme/localization/messages/zh.json');
+            loadMessages(dxMessage);
+            dxLocal(navigator.language);
+            break;
+        }
+        case 'en': {
+            const dxMessage = await import('devextreme/localization/messages/en.json');
+            loadMessages(dxMessage);
+            dxLocal(navigator.language);
+            break;
+        }
+    }
+    //#endregionion
 
     return {
         legacy: false,
@@ -29,7 +50,7 @@ async function createI18nOptions(): Promise<I18nOptions> {
             [locale]: message,
         },
         availableLocales: availableLocales,
-        sync: true, //If you don’t want to inherit locale from global scope, you need to set sync of i18n component option to false.
+        sync: true, //如果您不想从全局范围继承区域设置，则需要将i18n组件选项的sync设置为false。
         silentTranslationWarn: true, // true - warning off
         missingWarn: false,
         silentFallbackWarn: true,

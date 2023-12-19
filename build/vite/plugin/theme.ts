@@ -8,7 +8,7 @@ import { viteThemePlugin, antdDarkThemePlugin, mixLighten, mixDarken, tinycolor 
 import { getThemeColors, generateColors } from '../../config/themeConfig';
 import { generateModifyVars } from '../../generate/generateModifyVars';
 
-export function configThemePlugin(): PluginOption[] {
+export function configThemePlugin(isBuild: boolean): PluginOption[] {
     const colors = generateColors({
         mixDarken,
         mixLighten,
@@ -16,15 +16,32 @@ export function configThemePlugin(): PluginOption[] {
     });
     const plugin = [
         viteThemePlugin({
+            resolveSelector: (s) => {
+                s = s.trim();
+                switch (s) {
+                    case '.ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon':
+                        return '.ant-steps-item-icon > .ant-steps-icon';
+                    case '.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)':
+                    case '.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover':
+                    case '.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):active':
+                        return s;
+                    case '.ant-steps-item-icon > .ant-steps-icon':
+                        return s;
+                    case '.ant-select-item-option-selected:not(.ant-select-item-option-disabled)':
+                        return s;
+                    default:
+                        if (s.indexOf('.ant-btn') >= -1) {
+                            // 按钮被重新定制过，需要过滤掉class防止覆盖
+                            return s;
+                        }
+                }
+                return s.startsWith('[data-theme') ? s : `[data-theme] ${s}`;
+            },
             colorVariables: [...getThemeColors(), ...colors],
         }),
         antdDarkThemePlugin({
-            preloadFiles: [
-                // path.resolve(process.cwd(), 'node_modules/ant-design-vue/dist/antd.less'),
-                //path.resolve(process.cwd(), 'node_modules/ant-design-vue/dist/antd.dark.less'),
-                path.resolve(process.cwd(), 'src/styles/index.less'),
-            ],
-            // filter: (id) => (isBuild ? !id.endsWith('antd.less') : true),
+            preloadFiles: [path.resolve(process.cwd(), 'src/styles/index.less')],
+            filter: (id) => (isBuild ? !id.endsWith('antd.less') : true),
             darkModifyVars: {
                 ...generateModifyVars(true),
             },

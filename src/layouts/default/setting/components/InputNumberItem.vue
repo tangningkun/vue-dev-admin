@@ -1,6 +1,10 @@
 <template>
     <div :class="prefixCls">
-        <span> {{ title }}</span>
+        <!-- <span> {{ title }}</span> -->
+        <a-tooltip>
+            <template #title> {{ title }}</template>
+            {{ title }}
+        </a-tooltip>
         <a-input-number v-bind="$attrs" size="small" :class="`${prefixCls}-input-number`" @change="handleChange" />
     </div>
 </template>
@@ -32,7 +36,7 @@
         display: flex;
         justify-content: space-between;
         margin: 16px 0;
-        color: @colorText;
+        // color: @colorText;
 
         &-input-number {
             width: 126px;

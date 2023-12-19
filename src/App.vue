@@ -14,7 +14,6 @@
     import { ThemeEnum } from './enums/appEnum';
     const { defaultAlgorithm, darkAlgorithm, compactAlgorithm } = theme;
     const appStore = useAppStore();
-
     const configTheme = reactive({
         algorithm: [defaultAlgorithm, compactAlgorithm],
         token: {

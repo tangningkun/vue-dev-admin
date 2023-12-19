@@ -1,6 +1,10 @@
 <template>
     <div :class="prefixCls">
-        <span> {{ title }}</span>
+        <!-- <span> {{ title }}</span> -->
+        <a-tooltip>
+            <template #title> {{ title }}</template>
+            {{ title }}
+        </a-tooltip>
         <a-select v-bind="getBindValue" :class="`${prefixCls}-select`" :disabled="disabled" size="small" :options="options" @change="handleChange" />
     </div>
 </template>
@@ -48,7 +52,7 @@
         display: flex;
         justify-content: space-between;
         margin: 16px 0;
-        color: @colorText;
+        // color: @colorText;
 
         &-select {
             width: 126px;

@@ -103,8 +103,8 @@ export function getViewportOffset(element: Element): ViewportOffsetResult {
     const docClientLeft = doc.clientLeft;
     const docClientTop = doc.clientTop;
 
-    const pageXOffset = window.pageXOffset;
-    const pageYOffset = window.pageYOffset;
+    const pageXOffset = window.scrollX;
+    const pageYOffset = window.scrollY;
 
     const box = getBoundingClientRect(element);
 
@@ -120,7 +120,8 @@ export function getViewportOffset(element: Element): ViewportOffsetResult {
 
     const clientWidth = window.document.documentElement.clientWidth;
     const clientHeight = window.document.documentElement.clientHeight;
-    return {
+
+    const result = {
         left: left,
         top: top,
         right: clientWidth - rectWidth - left,
@@ -128,6 +129,8 @@ export function getViewportOffset(element: Element): ViewportOffsetResult {
         rightIncludeBody: clientWidth - left,
         bottomIncludeBody: clientHeight - top,
     };
+    console.log('getViewportOffset', result);
+    return result;
 }
 
 export function hackCss(attr: string, value: string) {

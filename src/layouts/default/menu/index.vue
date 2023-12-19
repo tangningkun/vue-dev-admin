@@ -116,7 +116,7 @@
 
                 return <AppLogo showTitle={!unref(getCollapsed)} class={unref(getLogoClass)} theme={unref(getComputedMenuTheme)} />;
             }
-            console.log('props.isHorizontal', props.isHorizontal);
+
             function renderMenu() {
                 const { menus, ...menuProps } = unref(getCommonProps);
                 if (!menus || !menus.length) {

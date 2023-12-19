@@ -52,7 +52,7 @@
         flex-wrap: wrap;
         margin: 16px 0;
         justify-content: space-around;
-        color: @colorText;
+        // color: @colorText;
 
         &__item {
             width: 20px;

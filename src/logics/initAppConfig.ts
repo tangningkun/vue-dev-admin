@@ -27,7 +27,6 @@ import { ThemeEnum } from '/@/enums/appEnum';
  * 初始项目配置
  */
 export async function initAppConfigStore() {
-    debugger;
     const localeStore = useLocaleStore();
     const appStore = useAppStore();
     let projCfg: ProjectConfig = Persistent.getLocal(PROJ_CFG_KEY) as ProjectConfig;

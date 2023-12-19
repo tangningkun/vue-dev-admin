@@ -66,7 +66,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     vitePlugins.push(configVisualizerConfig(viteEnv));
 
     // vite-plugin-theme
-    vitePlugins.push(configThemePlugin());
+    vitePlugins.push(configThemePlugin(isBuild));
 
     if (isBuild) {
         // vite-plugin-imagemin

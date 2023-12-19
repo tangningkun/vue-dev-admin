@@ -1,4 +1,5 @@
 import '/@/styles/index.less';
+import 'virtual:svg-icons-register';
 import 'virtual:uno.css';
 // import 'default-passive-events';
 import { createApp } from 'vue';
@@ -21,9 +22,6 @@ async function bootstrapApp() {
     // 初始化内部系统配置
     await initAppConfigStore();
 
-    // // Register global components
-    // registerGlobComp(app);
-
     //多语言配置
     //异步情况：可以从服务器端获取语言文件
     await setupI18nAsync(app);
@@ -45,5 +43,4 @@ async function bootstrapApp() {
 
     app.mount('#app');
 }
-
-await bootstrapApp();
+bootstrapApp();

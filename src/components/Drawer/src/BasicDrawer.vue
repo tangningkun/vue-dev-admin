@@ -161,6 +161,8 @@
     @prefix-cls-detail: ~'@{namespace}-basic-drawer__detail';
 
     .@{prefix-cls} {
+        color: @colorText;
+
         .ant-drawer-wrapper-body {
             overflow: hidden;
         }
@@ -174,7 +176,8 @@
         .ant-drawer-body {
             height: calc(100% - @header-height);
             padding: 0;
-            background-color: @colorBgBase;
+            // background-color: @colorBgBase;
+            color: @colorText;
 
             .scrollbar__wrap {
                 padding: 16px !important;

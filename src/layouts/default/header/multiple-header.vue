@@ -68,6 +68,7 @@
         setHeaderHeight(height);
         return {
             height: `${height}px`,
+            'min-height': `${height}px`,
         };
     });
 

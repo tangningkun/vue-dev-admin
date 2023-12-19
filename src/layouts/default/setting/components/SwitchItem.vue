@@ -1,6 +1,10 @@
 <template>
     <div :class="prefixCls">
-        <span> {{ title }}</span>
+        <!-- <span> {{ title }}</span> -->
+        <a-tooltip>
+            <template #title> {{ title }}</template>
+            {{ title }}
+        </a-tooltip>
         <a-switch v-bind="getBindValue" :disabled="disabled" :checked-children="t('layout.setting.on')" :un-checked-children="t('layout.setting.off')" @change="handleChange" />
     </div>
 </template>
@@ -43,6 +47,6 @@
         display: flex;
         justify-content: space-between;
         margin: 16px 0;
-        color: @colorText;
+        // color: @colorText;
     }
 </style>

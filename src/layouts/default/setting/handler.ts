@@ -45,10 +45,10 @@ export function handler(event: HandlerEnum, value: any): DeepPartial<ProjectConf
                 return {};
             }
             updateThemePrimaryColor(value);
-            // return {};
-            // changeTheme(value);
+            return {};
+        // changeTheme(value);
 
-            return { themeColor: value };
+        // return { themeColor: value };
 
         case HandlerEnum.CHANGE_THEME:
             if (getDarkMode.value === value) {

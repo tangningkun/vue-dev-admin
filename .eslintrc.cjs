@@ -45,20 +45,7 @@ module.exports = {
         '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-unused-vars': [
-            'error',
-            {
-                argsIgnorePattern: '^h$',
-                /*
-                    下面都会视为使用了变量
-                    被调用 (foo()) 或 作为构造函数 (new foo())
-                    被读取 (var y = x)
-                    作为参数传递给函数 (doSomething(foo))
-                    在一个函数的内部读取，这个函数被传递给另一个函数 (doSomething(function() { foo(); }))
-                */
-                varsIgnorePattern: '^h$',
-            },
-        ],
+        '@typescript-eslint/no-unused-vars': 'off',
 
         'no-var': 'error',
         'no-unused-vars': [
@@ -68,6 +55,7 @@ module.exports = {
                 varsIgnorePattern: '^h$',
             },
         ],
+        'no-unused-vars': 'off',
         'prettier/prettier': 'error',
         // 禁止出现console
         'no-console': 'off',
@@ -86,7 +74,7 @@ module.exports = {
         // 强制所有控制语句使用一致的括号风格
         curly: 'warn',
         // 要求 switch 语句中有 default 分支
-        'default-case': 'warn',
+        'default-case': 'off',
         // 强制尽可能地使用点号
         'dot-notation': 'warn',
         // 要求使用 === 和 !==

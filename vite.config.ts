@@ -8,6 +8,7 @@ import { generateModifyVars } from './build/generate/generateModifyVars';
 import pkg from './package.json';
 import dayjs from 'dayjs';
 import { OUTPUT_DIR } from './build/constant';
+// import path from 'path';
 
 const { dependencies, devDependencies, name, version } = pkg;
 const __APP_INFO__ = {
@@ -19,6 +20,7 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
     console.log('command==>', command);
     console.log('mode==>', mode);
     console.log('ssrBuild==>', ssrBuild);
+    console.log('process===>', process.env.npm_lifecycle_script);
     const root = process.cwd(); //根目录
     const env = loadEnv(mode, root); // loadEnv读取的布尔类型是一个字符串。此函数可以转换为布尔类型
     const viteEnv = wrapperEnv(env);
@@ -47,7 +49,10 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
          */
         resolve: {
             alias: [
-                // /@/xxxx => src/xxxx
+                {
+                    find: 'vue-i18n',
+                    replacement: 'vue-i18n/dist/vue-i18n.cjs.js',
+                },
                 {
                     find: /\/@\//,
                     replacement: pathResolve('src') + '/',
