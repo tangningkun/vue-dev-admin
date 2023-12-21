@@ -129,7 +129,6 @@ export function getViewportOffset(element: Element): ViewportOffsetResult {
         rightIncludeBody: clientWidth - left,
         bottomIncludeBody: clientHeight - top,
     };
-    console.log('getViewportOffset', result);
     return result;
 }
 

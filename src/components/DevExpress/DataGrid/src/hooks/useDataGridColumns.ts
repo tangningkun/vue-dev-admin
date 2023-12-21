@@ -43,7 +43,7 @@ function handleIndexColumn(propsRef: ComputedRef<BasicDataGridProps>, columns: A
             dataField: 'DataGridXh',
             width: 50,
             minWidth: 50,
-            caption: t('routes.demo.devextreme.dataGrid.serialNumber'), //标题
+            caption: t('components.basic.dataGrid.serialNumber'), //标题
             alignment: 'center',
             dataType: 'string',
             allowEditing: false,

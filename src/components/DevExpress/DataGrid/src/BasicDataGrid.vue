@@ -26,11 +26,10 @@
             <template v-for="item in Object.keys($slots)" #[item]="data" :key="item">
                 <slot :name="item" v-bind="data || {}"></slot>
             </template>
-
             <!-- 配置工具栏 结束 -->
         </DxDataGrid>
         <!-- 分页下拉框 -->
-        <DxSelectBox v-if="true" v-model="getSelectPage" :class="`${prefixCls}_page`" :items="getAllowedPageSizes" :on-value-changed="onChangedPageSize" />
+        <DxSelectBox v-if="true" :value="getSelectPage" :class="`${prefixCls}_page`" :items="getAllowedPageSizes" :on-value-changed="onChangedPageSize" />
     </div>
 </template>
 <script lang="ts">
@@ -99,7 +98,7 @@
 
             const { getViewColumns } = useDataGridColumns(getProps);
 
-            const { getAllowedPageSizes, getSelectPage, getPaging } = useDateGridScroll(getProps, dxDataGridElRef, wrapRef);
+            const { getAllowedPageSizes, getSelectPage, getPager, getPaging } = useDateGridScroll(getProps, dxDataGridElRef, wrapRef);
 
             const dataGridAction: DataGridActionType = {
                 setProps,
@@ -128,11 +127,11 @@
                     paging: unref(getPaging),
                     onContentReady: onCustomizeContentReady(),
                 };
-                // console.log(propsData);
+                // propsData = omit(propsData, 'pager');
+                // propsData = omit(propsData, ['pager', 'paging']);
                 propsData = omit(propsData);
                 return propsData;
             });
-
             //#endregion
 
             //#region 【expose暴露方法】
@@ -171,7 +170,7 @@
 
             //#endregion
 
-            return { getAllowedPageSizes, dxDataGridElRef, getSelectPage, onChangedPageSize, wrapRef, prefixCls, getWrapperClass, getBindValues, getViewColumns };
+            return { getAllowedPageSizes, dxDataGridElRef, getSelectPage, getPager, onChangedPageSize, wrapRef, prefixCls, getWrapperClass, getBindValues, getViewColumns };
         },
     });
 </script>
@@ -187,11 +186,10 @@
         //x 轴
 
         .@{prefix-cls-page} {
-            margin-left: 1rem;
             width: 79px;
             height: 26px;
             line-height: 26px;
-            bottom: 30px;
+            margin-left: 1rem;
             position: absolute;
 
             .dx-texteditor-input {

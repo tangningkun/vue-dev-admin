@@ -25,6 +25,7 @@ declare module 'vue' {
         AMenu: typeof import('ant-design-vue/es')['Menu'];
         AMenuDivider: typeof import('ant-design-vue/es')['MenuDivider'];
         AMenuItem: typeof import('ant-design-vue/es')['MenuItem'];
+        APageHeader: typeof import('ant-design-vue/es')['PageHeader'];
         APopconfirm: typeof import('ant-design-vue/es')['Popconfirm'];
         APopover: typeof import('ant-design-vue/es')['Popover'];
         AppDarkModeToggle: typeof import('./src/components/Application/src/AppDarkModeToggle.vue')['default'];
@@ -42,7 +43,9 @@ declare module 'vue' {
         ATag: typeof import('ant-design-vue/es')['Tag'];
         ATooltip: typeof import('ant-design-vue/es')['Tooltip'];
         ATypographyParagraph: typeof import('ant-design-vue/es')['TypographyParagraph'];
+        AWatermark: typeof import('ant-design-vue/es')['Watermark'];
         BasicArrow: typeof import('./src/components/Basic/src/BasicArrow.vue')['default'];
+        BasicButton: typeof import('./src/components/DevExpress/Toolbar/src/components/BasicButton.vue')['default'];
         BasicDataGrid: typeof import('./src/components/DevExpress/DataGrid/src/BasicDataGrid.vue')['default'];
         BasicDrawer: typeof import('./src/components/Drawer/src/BasicDrawer.vue')['default'];
         BasicHelp: typeof import('./src/components/Basic/src/BasicHelp.vue')['default'];
@@ -66,6 +69,7 @@ declare module 'vue' {
         DropDownDataGrid: typeof import('./src/components/devextreme/dexextreme-dropdown-datagrid/src/DropDownDataGrid.vue')['default'];
         EditDataGrid: typeof import('./src/components/devextreme/dexextreme-datagrid/src/components/EditDataGrid.vue')['default'];
         Icon: typeof import('./src/components/Icon/src/Icon.vue')['default'];
+        IconAntdBellOutlined: typeof import('~icons/antd/bell-outlined')['default'];
         LazyContainer: typeof import('./src/components/Container/src/LazyContainer.vue')['default'];
         Loading: typeof import('./src/components/Loading/src/Loading.vue')['default'];
         Menu: typeof import('./src/components/SimpleMenu/src/components/Menu.vue')['default'];

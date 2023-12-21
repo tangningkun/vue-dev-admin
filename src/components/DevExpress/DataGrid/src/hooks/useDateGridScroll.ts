@@ -82,7 +82,16 @@ export function useDateGridScroll(propsRef: ComputedRef<BasicDataGridProps>, dat
         if (loadingEl) {
             loadingEl.style.transform = `translate(${Math.floor((rightIncludeBody - 216) / 2)}px, ${Math.floor((height - 90) / 2)}px)`;
         }
-        const pageSize = (height - dateGridHeaderHeight - dateGridPagerHeight) / 31;
+        let pageElStyleBottom = 0;
+        const pagerEl = dataGridEl.querySelector('.dx-datagrid-pager') as HTMLElement;
+        const pagersEl = pagerEl.querySelector('.dx-pages') as HTMLElement;
+        const pageEl = unref(wrapRef)?.querySelector('.dev-basic-data-grid_page') as HTMLElement;
+        if (pagerEl && pagersEl && pageEl) {
+            pageElStyleBottom = (pagerEl.offsetHeight - pagersEl.offsetHeight) / 2;
+            pageEl.style.bottom = `${paddingBottomHeight + pageElStyleBottom}px`;
+        }
+
+        const pageSize = (height - dateGridHeaderHeight - dateGridPagerHeight) / (pageElStyleBottom > 7 ? 31 : 26);
         setPageSize(Math.floor(pageSize));
         (dataGridEl as HTMLElement)!.style.height = `${height}px`;
     }
@@ -128,6 +137,14 @@ export function useDateGridScroll(propsRef: ComputedRef<BasicDataGridProps>, dat
             pageSize: dataGridPageSize,
         };
     });
+
+    const getPager = computed(() => {
+        const { pager } = unref(propsRef);
+        return {
+            ...pager,
+        };
+    });
+
     /**
      * 计算当前页大小
      */
@@ -135,5 +152,5 @@ export function useDateGridScroll(propsRef: ComputedRef<BasicDataGridProps>, dat
         const dataGridPageSize = unref(dataGridPageSizeRef);
         return dataGridPageSize;
     });
-    return { getAllowedPageSizes, getSelectPage, getPaging, getScrollRef, redoHeight };
+    return { getAllowedPageSizes, getSelectPage, getPager, getPaging, getScrollRef, redoHeight };
 }

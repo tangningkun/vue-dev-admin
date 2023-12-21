@@ -50,6 +50,10 @@ export default ({ command, mode, ssrBuild }: ConfigEnv): UserConfig => {
         resolve: {
             alias: [
                 {
+                    find: 'inferno',
+                    replacement: 'inferno/dist/index.esm.js',
+                },
+                {
                     find: 'vue-i18n',
                     replacement: 'vue-i18n/dist/vue-i18n.cjs.js',
                 },

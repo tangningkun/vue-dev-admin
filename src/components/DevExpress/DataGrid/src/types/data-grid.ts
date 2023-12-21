@@ -117,11 +117,21 @@ export interface DataGridActionType {
     /**
      * 获取初始化信息
      */
-    instance: () => any;
+    instance: () => Promise<any>;
     /**
      * 获取选中的网格信息
      */
     getSelectedRowsData: () => Promise<Array<any>>; //| Promise<Array<any>>;
+    /**
+     * 清除过滤器
+     */
+    clearFilter: () => void;
+    /**
+     * 列选择器
+     */
+    showColumnChooser: () => void;
+
+    //#region 【自定义导出事件】
     /**
      * 导出所有数据源
      */
@@ -134,13 +144,6 @@ export interface DataGridActionType {
      * 导出当前页数据信息
      */
     customExportPage: () => void;
-    /**
-     * 清除过滤器
-     */
-    clearFilter: () => void;
-    /**
-     * 列选择器
-     */
-    showColumnChooser: () => void;
-    // emit?: EmitType;
+
+    //#endregion
 }

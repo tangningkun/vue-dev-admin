@@ -24,7 +24,7 @@
 <script lang="ts" setup>
     import type { DrawerInstance, DrawerProps } from './typing';
     import type { CSSProperties } from 'vue';
-    import { ref, computed, watch, unref, nextTick, toRaw, getCurrentInstance } from 'vue';
+    import { ref, computed, useAttrs, watch, unref, nextTick, toRaw, getCurrentInstance } from 'vue';
     import { useI18n } from '/@/hooks/web/useI18n';
     import { isFunction, isNumber } from '/@/utils/is';
     import { deepMerge } from '/@/utils';
@@ -33,7 +33,6 @@
     import { ScrollContainer } from '/@/components/Container';
     import { basicProps } from './props';
     import { useDesign } from '/@/hooks/web/useDesign';
-    import { useAttrs } from '/@/hooks/core/useAttrs';
     const props = defineProps(basicProps);
     const emit = defineEmits(['visible-change', 'ok', 'close', 'register']);
 

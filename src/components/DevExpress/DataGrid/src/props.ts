@@ -10,6 +10,64 @@ import { SearchMode } from '/@/enums/dataGrid';
  * devextreme表单基本Props
  */
 export const DataGridProps = {
+    //#region 【自定义Props】
+
+    /**
+     * 取消编辑勾选
+     * 分页、查询、筛选、刷新后清空选中
+     */
+    isCloseEditClearSelection: propTypes.bool.def(true),
+    /**
+     * 列信息
+     */
+    customizeColumn: {
+        type: [Array] as PropType<Array<CustomizeColumns>>,
+        default: () => [],
+    },
+    /**
+     * 自定义编辑是否启用
+     */
+    customizeEnableEditing: propTypes.bool.def(false),
+    /**
+     * 自定义编辑模式
+     * type:'batch' | 'cell' | 'row' | 'form' | 'popup'
+     */
+    customizeEditingMode: propTypes.oneOf(['batch', 'cell', 'row', 'form', 'popup']).def('batch'),
+    /**
+     * 自定义编辑事件属性
+     */
+    customizeEditing: { type: Object as PropType<CustomizeEditing> },
+
+    /**
+     * 是否自适应高度
+     */
+    customizeResizeHeight: propTypes.bool.def(true),
+    /**
+     * 是否继承父级高度（父级高度-表单高度-padding高度）
+     */
+    customizeCanResizeParent: propTypes.bool.def(false),
+    /**
+     *
+     */
+    customizeScroll: {
+        type: Object as PropType<{ x: number | true; y: number }>,
+        default: null,
+    },
+
+    //#region 【打开抽屉与弹窗】
+
+    /**
+     * 给子界面打开事件
+     */
+    openModalOrDrawer: {
+        type: Function as PropType<<T = any>(props?: boolean, data?: T, openOnSet?: boolean) => void>,
+    },
+    //#endregion
+
+    //#endregion
+
+    //#region 【DataGrid原始属性】
+
     /**
      * 指定提供键值以访问数据项的键属性（或多个属性）。
      * 每个键值必须是唯一的。此属性仅适用于 data 是简单数组的情况。
@@ -58,14 +116,7 @@ export const DataGridProps = {
      * 是否显示序号列
      */
     showIndexColumn: propTypes.bool.def(true),
-    /**
-     * 列信息
-     */
-    // columns: {
-    customizeColumn: {
-        type: [Array] as PropType<Array<CustomizeColumns>>,
-        default: () => [],
-    },
+
     /**
      * 列宽
      */
@@ -210,11 +261,6 @@ export const DataGridProps = {
     //#endregion
 
     /**
-     * 取消编辑勾选
-     * 分页、查询、筛选、刷新后清空选中
-     */
-    isCloseEidtClearSelection: propTypes.bool.def(true),
-    /**
      * 通知 DataGrid 服务器的数据处理操作。
      */
     remoteOperations: {
@@ -301,39 +347,6 @@ export const DataGridProps = {
         default: '100%',
     },
 
-    //#region 【自定义Props】
-    /**
-     * 自定义编辑是否启用
-     */
-    customizeEnableEditing: propTypes.bool.def(false),
-    /**
-     * 自定义编辑模式
-     * type:'batch' | 'cell' | 'row' | 'form' | 'popup'
-     */
-    customizeEditingMode: propTypes.oneOf(['batch', 'cell', 'row', 'form', 'popup']).def('batch'),
-    /**
-     * 自定义编辑事件属性
-     */
-    customizeEditing: { type: Object as PropType<CustomizeEditing> },
-
-    /**
-     * 是否自适应高度
-     */
-    customizeResizeHeight: propTypes.bool.def(true),
-    /**
-     * 是否继承父级高度（父级高度-表单高度-padding高度）
-     */
-    customizeCanResizeParent: propTypes.bool.def(false),
-    /**
-     *
-     */
-    customizeScroll: {
-        type: Object as PropType<{ x: number | true; y: number }>,
-        default: null,
-    },
-
-    //#endregion
-
     //#region 【export导出配置】
     /**
      * 导出文件名
@@ -341,13 +354,5 @@ export const DataGridProps = {
     exportFileName: { type: String, default: '' },
     //#endregion
 
-    //#region 【打开抽屉与弹窗】
-
-    /**
-     * 给子界面打开事件
-     */
-    openModalOrDrawer: {
-        type: Function as PropType<<T = any>(props?: boolean, data?: T, openOnSet?: boolean) => void>,
-    },
     //#endregion
 };

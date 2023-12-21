@@ -1,9 +1,11 @@
 <template>
-    <a-config-provider :theme="configTheme" w-full h-full>
-        <AppProvider>
-            <RouterView />
-        </AppProvider>
-    </a-config-provider>
+    <a-watermark content="VUE DEV Admin" w-full h-full>
+        <a-config-provider :theme="configTheme" w-full h-full>
+            <AppProvider>
+                <RouterView />
+            </AppProvider>
+        </a-config-provider>
+    </a-watermark>
 </template>
 
 <script lang="ts" setup>

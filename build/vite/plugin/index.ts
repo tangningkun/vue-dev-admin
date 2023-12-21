@@ -19,6 +19,7 @@ import { configPwaConfig } from './pwa';
 // import { configStyleImportPlugin } from './styleImport';
 import { configSvgIconsPlugin } from './svgSprite';
 import { configThemePlugin } from './theme';
+// import { configIconPlugin } from './icon';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     const {
@@ -61,6 +62,9 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 
     //unplugin-vue-components 自动导入UI库
     vitePlugins.push(configResolverPlugin());
+
+    //unplugin-icons/vite 自动导入图标
+    // vitePlugins.push(configIconPlugin());
 
     // rollup-plugin-visualizer
     vitePlugins.push(configVisualizerConfig(viteEnv));
