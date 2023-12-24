@@ -33,5 +33,18 @@
             top: 200px;
             z-index: @page-loading-z-index;
         }
+
+        .ant-tabs-nav-list {
+            .ant-tabs-tab {
+                width: 4rem;
+                border-radius: 2px 2px 0 0;
+
+                .ant-tabs-tab-btn {
+                    text-align: center;
+                    width: 100%;
+                    font-size: 13px;
+                }
+            }
+        }
     }
 </style>

@@ -20,6 +20,7 @@
         inheritAttrs: false,
     });
     const props = defineProps(buttonProps);
+
     // get component class
     const attrs = useAttrs();
     const { customizeClick, customizeLoading } = unref(props);
@@ -27,7 +28,7 @@
     function onClick() {
         if (customizeLoading ?? false) {
             iconLoading.value = true;
-            debugger;
+
             Promise.all([customizeClick()]).then(() => {
                 iconLoading.value = false;
             });
@@ -42,4 +43,6 @@
         ...props,
         loading: unref(iconLoading),
     }));
+
+    // const
 </script>

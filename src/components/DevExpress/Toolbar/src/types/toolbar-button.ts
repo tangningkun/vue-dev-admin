@@ -8,11 +8,11 @@ export interface ToolbarButtonProps {
     /**
      * 按钮名称
      */
-    text: string;
+    text?: string;
     /**
      * 按钮点击事件
      */
-    customizeClick: Function;
+    customizeClick?: Function;
 
     //#endregion
 

@@ -1,7 +1,7 @@
 <template>
     <div class="p-4">
-        <BasicToolbar :item="buttons" />
-        <a-tabs v-model:activeKey="activeKey">
+        <BasicToolbar :item="buttonRef" />
+        <a-tabs v-model:activeKey="activeKey" @tab-click="tabClickFun()">
             <a-tab-pane key="waitTab" :tab="t('components.basic.tab.wait')">
                 <BasicDataGrid @register="waitRegister" />
             </a-tab-pane>
@@ -11,8 +11,8 @@
         </a-tabs>
     </div>
 </template>
-<script lang="ts" setup>
-    import { ref, reactive } from 'vue';
+<script lang="ts" setup name="TabDataGrid">
+    import { ref } from 'vue';
     import { BasicDataGrid, CustomizeColumns, useDataGrid } from '/@/components/DevExpress/DataGrid';
     import { BasicToolbar } from '/@/components/DevExpress/Toolbar';
     import CustomStore from 'devextreme/data/custom_store';
@@ -23,10 +23,10 @@
 
     const activeKey = ref('waitTab');
 
-    const buttons: Array<ToolbarButtonProps> = reactive([
+    const waitButtons: Array<ToolbarButtonProps> = [
         {
             keyExpr: 'add',
-            text: t('button.index.add'),
+            text: t('components.basic.button.add'),
             preIcon: 'material-symbols:add',
             customizeClick: () => {
                 console.log('新增');
@@ -34,21 +34,33 @@
         },
         {
             keyExpr: 'edit',
-            text: t('button.index.edit'),
+            text: t('components.basic.button.edit'),
             preIcon: 'akar-icons:edit',
             customizeClick: () => {
-                console.log('编辑');
+                console.log('新增');
             },
         },
         {
             keyExpr: 'del',
-            text: t('button.index.del'),
+            text: t('components.basic.button.del'),
             preIcon: 'material-symbols:delete',
             customizeClick: () => {
-                console.log('删除');
+                console.log('新增');
             },
         },
-    ]);
+    ];
+    const doneButtons: Array<ToolbarButtonProps> = [
+        {
+            keyExpr: 'del',
+            text: t('components.basic.button.del'),
+            preIcon: 'material-symbols:delete',
+            customizeClick: () => {
+                console.log('新增');
+            },
+        },
+    ];
+
+    const buttonRef = ref<Array<ToolbarButtonProps>>(waitButtons);
 
     function isNotEmpty(value) {
         return value !== undefined && value !== null && value !== '';
@@ -80,6 +92,7 @@
 
     const dataSource = store;
     const dataSource1 = store;
+
     const columns: Array<CustomizeColumns> = [
         {
             dataField: 'OrderNumber',
@@ -144,14 +157,30 @@
             dataType: 'string',
         },
     ];
-    const [waitRegister] = useDataGrid({
+
+    const [waitRegister, waitDataGrid] = useDataGrid({
         dataSource: dataSource,
         customizeColumn: columns,
+        customizeEnableTabPane: true,
     });
 
-    const [doneRegister] = useDataGrid({
+    const [doneRegister, doneDateGrid] = useDataGrid({
         dataSource: dataSource1,
         customizeColumn: columns1,
+        customizeEnableTabPane: true,
     });
+
+    const tabClickFun = async () => {
+        //TODO:执行相反操作 执行点击事件时，值未改动
+        if (activeKey.value === 'waitTab') {
+            const doneInstance = await doneDateGrid.instance();
+            doneInstance.refresh();
+            buttonRef.value = doneButtons;
+        } else {
+            const waitInstance = await waitDataGrid.instance();
+            waitInstance.refresh();
+            buttonRef.value = waitButtons;
+        }
+    };
 </script>
 <style lang="less"></style>

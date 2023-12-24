@@ -53,7 +53,10 @@ export const DataGridProps = {
         type: Object as PropType<{ x: number | true; y: number }>,
         default: null,
     },
-
+    /**
+     *
+     */
+    customizeEnableTabPane: propTypes.bool.def(false),
     //#region 【打开抽屉与弹窗】
 
     /**

@@ -87,6 +87,11 @@ export interface BasicDataGridProps extends DxDataGrid {
     isCloseEditClearSelection: boolean;
 
     /**
+     * 是否启用标签页
+     */
+    customizeEnableTabPane: boolean;
+
+    /**
      * 导出文件名
      */
     exportFileName: string;

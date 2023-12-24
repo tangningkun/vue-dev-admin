@@ -29,7 +29,7 @@
             <!-- 配置工具栏 结束 -->
         </DxDataGrid>
         <!-- 分页下拉框 -->
-        <DxSelectBox v-if="true" :value="getSelectPage" :class="`${prefixCls}_page`" :items="getAllowedPageSizes" :on-value-changed="onChangedPageSize" />
+        <DxSelectBox v-if="true" :value="getSelectPage" :class="`${prefixCls}_page`" :items="getPageSizes" :on-value-changed="onChangedPageSize" />
     </div>
 </template>
 <script lang="ts">
@@ -98,7 +98,7 @@
 
             const { getViewColumns } = useDataGridColumns(getProps);
 
-            const { getAllowedPageSizes, getSelectPage, getPager, getPaging } = useDateGridScroll(getProps, dxDataGridElRef, wrapRef);
+            const { getPageSizes, getSelectPage, getPager, getPaging } = useDateGridScroll(getProps, dxDataGridElRef, wrapRef);
 
             const dataGridAction: DataGridActionType = {
                 setProps,
@@ -170,7 +170,7 @@
 
             //#endregion
 
-            return { getAllowedPageSizes, dxDataGridElRef, getSelectPage, getPager, onChangedPageSize, wrapRef, prefixCls, getWrapperClass, getBindValues, getViewColumns };
+            return { getPageSizes, dxDataGridElRef, getSelectPage, getPager, onChangedPageSize, wrapRef, prefixCls, getWrapperClass, getBindValues, getViewColumns };
         },
     });
 </script>
@@ -197,6 +197,10 @@
                 line-height: 24px;
                 min-height: 24px;
             }
+        }
+
+        .dx-scrollable-content {
+            padding-bottom: 0 !important;
         }
 
         .dx-scrollbar-horizontal.dx-scrollbar-hoverable {

@@ -12,12 +12,12 @@ export function useDataGrid(dataGridProps: Props): [(instance: DataGridActionTyp
     let stopWatch: WatchStopHandle;
 
     async function getDataGrid() {
-        const table = unref(dataGridRef);
-        if (!table) {
-            error('The DataGrid instance has not been obtained yet, please make sure the DataGrid is presented when performing the table operation!');
+        const dataGrid = unref(dataGridRef);
+        if (!dataGrid) {
+            error('The DataGrid instance has not been obtained yet, please make sure the DataGrid is presented when performing the dataGrid operation!');
         }
         await nextTick();
-        return table as DataGridActionType;
+        return dataGrid as DataGridActionType;
     }
 
     function register(instance: DataGridActionType) {

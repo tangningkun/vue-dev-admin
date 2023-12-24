@@ -1,9 +1,12 @@
 import { primaryType, ToolbarButtonProps } from './types/toolbar-button';
 import { propTypes } from '/@/utils/propTypes';
 import { buildUUID } from '/@/utils/uuid';
+import { DataGridActionType } from '../../DataGrid/src/types/data-grid';
 
 export const toolbarProps = {
     item: { type: Array as PropType<Array<ToolbarButtonProps>>, default: [] },
+    isToList: propTypes.bool.def(true),
+    listAction: { type: Object as PropType<DataGridActionType>, default: {} },
 };
 
 export const buttonProps = {
@@ -49,4 +52,12 @@ export const buttonProps = {
      * @default: 14
      */
     iconSize: propTypes.number.def(14),
+    /**
+     * 是否列表页
+     */
+    isToList: propTypes.bool.def(true),
+    /**
+     * 网格实例
+     */
+    listAction: { type: Object as PropType<DataGridActionType>, default: {} },
 };

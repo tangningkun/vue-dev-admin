@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup name="BasicDataGrid">
     import { reactive } from 'vue';
     import { BasicDataGrid, CustomizeColumns, useDataGrid } from '/@/components/DevExpress/DataGrid';
     import { BasicToolbar } from '/@/components/DevExpress/Toolbar';
@@ -85,7 +85,6 @@
     });
 
     async function getSelectRowList() {
-        debugger;
         const data = await getSelectedRowsData();
         console.log('getSelectRowList', data);
     }
