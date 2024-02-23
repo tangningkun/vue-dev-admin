@@ -20,4 +20,56 @@ export default {
         wait: '待办',
         done: '已办',
     },
+    design: {
+        com: {
+            component: '组件库',
+            template: '组件模板',
+            nodeTree: '结构树',
+            layoutField: '布局组件',
+            containerField: '容器组件',
+            basisField: '基础组件',
+            advancedField: '高级组件',
+            customField: '自定义组件',
+            underImplementation: '实现中...',
+        },
+        attr: {
+            componentAttribute: '组件属性',
+            formAttribute: '表单属性',
+        },
+        produce: {
+            noWidgetHint: '请从左侧列表中选择一个组件, 然后用鼠标拖动组件放置于此处.',
+        },
+
+        widgetLabel: {
+            //布局组件
+            grid: '栅格布局',
+            table: '表格布局',
+            tab: '标签页',
+            card: '卡片',
+            section: '区块',
+            'sub-form': '子表单',
+            'grid-col': '栅格列',
+            'table-cell': '单元格',
+            'tab-pane': '选项卡页',
+            'data-table': '数据表格',
+
+            //基础组件
+            input: '单行文本',
+            textarea: '多行文本',
+            number: '计数器',
+            radio: '单选项',
+            checkbox: '多选项',
+            select: '下拉选项',
+            time: '时间',
+            'time-range': '时间范围',
+            date: '日期',
+            'date-range': '日期范围',
+            switch: '开关',
+            rate: '评分',
+            color: '颜色选择器',
+            slider: '滑块',
+            button: '按钮',
+            divider: '分隔线',
+        },
+    },
 };

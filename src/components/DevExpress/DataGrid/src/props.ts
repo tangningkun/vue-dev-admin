@@ -4,6 +4,7 @@ import { DataSourceLikes } from './types/data-source';
 import { CustomizeColumns, CustomizeEditing, RemoteOperationsSetting } from './types/data-grid';
 import { ColumnFixing, FilterRow, HeaderFilter, Pager, Paging, Scrolling, Selection } from 'devextreme/ui/data_grid_types';
 import { SearchMode } from '/@/enums/dataGrid';
+
 // import { t } from '/@/hooks/web/useI18n';
 
 /**
@@ -12,6 +13,10 @@ import { SearchMode } from '/@/enums/dataGrid';
 export const DataGridProps = {
     //#region 【自定义Props】
 
+    /**
+     * 是否显示序号列
+     */
+    showIndexColumn: propTypes.bool.def(true),
     /**
      * 取消编辑勾选
      * 分页、查询、筛选、刷新后清空选中
@@ -115,10 +120,6 @@ export const DataGridProps = {
      * 调整列的大小
      */
     columnResizingMode: propTypes.oneOf(['nextColumn', 'widget']).def('widget'),
-    /**
-     * 是否显示序号列
-     */
-    showIndexColumn: propTypes.bool.def(true),
 
     /**
      * 列宽
@@ -242,8 +243,8 @@ export const DataGridProps = {
                 timeout: 1000,
             },
             height: 352,
-            visible: true,
             width: 252,
+            visible: true,
         },
     },
     /**

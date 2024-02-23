@@ -173,7 +173,7 @@ module.exports = {
         'no-fallthrough': 'warn',
         'no-extra-boolean-cast': 'warn',
         'no-case-declarations': 'warn',
-        'no-async-promise-executor': 'warn',
+        'no-async-promise-executor': 'off',
         'prettier/prettier': 'off',
         'no-redeclare': 'off',
         'max-params': 'off',

@@ -44,6 +44,16 @@ const comp: AppRouteModule = {
                         title: t('routes.demo.DataGrid.TabDataGrid'),
                     },
                 },
+
+                {
+                    path: 'GenerativeDesign',
+                    name: 'GenerativeDesign',
+                    component: () => import('/@/views/demo/GenerativeDesign/index.vue'),
+                    meta: {
+                        icon: 'material-symbols:table-sharp',
+                        title: t('routes.demo.DataGrid.GenerativeDesign'),
+                    },
+                },
             ],
         },
     ],

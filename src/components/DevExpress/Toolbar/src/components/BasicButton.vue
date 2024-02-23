@@ -12,6 +12,7 @@
     import { computed, unref, useAttrs, ref } from 'vue';
     import Icon from '/@/components/Icon/src/Icon.vue';
     import { buttonProps } from '../props';
+    import { isFunction } from '/@/utils/is';
 
     const iconLoading = ref(false);
 
@@ -26,14 +27,15 @@
     const { customizeClick, customizeLoading } = unref(props);
 
     function onClick() {
-        if (customizeLoading ?? false) {
-            iconLoading.value = true;
-
-            Promise.all([customizeClick()]).then(() => {
-                iconLoading.value = false;
-            });
-        } else {
-            customizeClick();
+        if (isFunction(customizeClick)) {
+            if (customizeLoading ?? false) {
+                iconLoading.value = true;
+                Promise.all([customizeClick()]).then(() => {
+                    iconLoading.value = false;
+                });
+            } else {
+                customizeClick();
+            }
         }
     }
 

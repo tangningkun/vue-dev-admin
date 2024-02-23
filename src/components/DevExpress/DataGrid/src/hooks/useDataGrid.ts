@@ -101,7 +101,7 @@ export function useDataGrid(dataGridProps: Props): [(instance: DataGridActionTyp
          */
         showColumnChooser: async (): Promise<void> => {
             const dataGrid = await getDataGrid();
-            dataGrid.showColumnChooser;
+            dataGrid.showColumnChooser();
         },
     };
 

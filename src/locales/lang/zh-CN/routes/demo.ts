@@ -3,6 +3,7 @@ export default {
         DataGrid: 'DataGrid',
         BasicDataGrid: '基础网格',
         TabDataGrid: '选项卡网格',
+        GenerativeDesign: '生成设计',
     },
 
     charts: {

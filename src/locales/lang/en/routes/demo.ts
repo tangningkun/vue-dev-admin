@@ -3,6 +3,7 @@ export default {
         DataGrid: 'DataGrid',
         BasicDataGrid: 'Basic DataGrid',
         TabDataGrid: 'Tab DataGrid',
+        GenerativeDesign: 'Generative Design',
     },
 
     charts: {

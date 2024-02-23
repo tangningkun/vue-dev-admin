@@ -160,8 +160,8 @@
 
             //#region 【内部事件，不暴露】
             // 设置默认条数
-            const onChangedPageSize = (e: any) => {
-                const dataGridInstance = instance();
+            const onChangedPageSize = async (e: any) => {
+                const dataGridInstance = await instance();
                 dataGridInstance.pageSize(e.value);
             };
             //#endregion
@@ -174,6 +174,7 @@
         },
     });
 </script>
+
 <style lang="less">
     @prefix-cls: ~'@{namespace}-basic-data-grid';
     @prefix-cls-page: ~'@{namespace}-basic-data-grid_page';

@@ -283,6 +283,9 @@ devDependencies:
     vue-types:
         specifier: ^5.1.1
         version: 5.1.1(vue@3.3.8)
+    vuedraggable:
+        specifier: ^4.1.0
+        version: 4.1.0(vue@3.3.8)
 
 packages:
     /@aashutoshrathi/word-wrap@1.2.6:
@@ -2574,6 +2577,7 @@ packages:
 
     /@types/node@18.18.9:
         resolution: { integrity: sha512-0f5klcuImLnG4Qreu9hPj/rEfFq6YRc5n2mAjSsH+ec/mJL+3voBH0+8T7o8RpFjH7ovc+TRsL/c7OYIQsPTfQ== }
+        requiresBuild: true
         dependencies:
             undici-types: 5.26.5
 
@@ -9915,6 +9919,10 @@ packages:
             is-plain-obj: 1.1.0
         dev: true
 
+    /sortablejs@1.14.0:
+        resolution: { integrity: sha512-pBXvQCs5/33fdN1/39pPL0NZF20LeRbLQ5jtnheIPN9JQAaufGjKdWduZn4U7wCtVuzKhmRkI0DFYHYRbB2H1w== }
+        dev: true
+
     /sortablejs@1.15.0:
         resolution: { integrity: sha512-bv9qgVMjUMf89wAvM6AxVvS/4MX3sPeN0+agqShejLU5z5GX4C75ow1O2e5k4L6XItUyAK3gH6AxSbXrOM5e8w== }
         dev: false
@@ -11457,6 +11465,15 @@ packages:
             '@vue/server-renderer': 3.3.8(vue@3.3.8)
             '@vue/shared': 3.3.8
             typescript: 5.2.2
+
+    /vuedraggable@4.1.0(vue@3.3.8):
+        resolution: { integrity: sha512-FU5HCWBmsf20GpP3eudURW3WdWTKIbEIQxh9/8GE806hydR9qZqRRxRE3RjqX7PkuLuMQG/A7n3cfj9rCEchww== }
+        peerDependencies:
+            vue: ^3.0.1
+        dependencies:
+            sortablejs: 1.14.0
+            vue: 3.3.8(typescript@5.2.2)
+        dev: true
 
     /warning@4.0.3:
         resolution: { integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w== }

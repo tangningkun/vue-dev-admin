@@ -130,25 +130,25 @@ export interface DataGridActionType {
     /**
      * 清除过滤器
      */
-    clearFilter: () => void;
+    clearFilter: () => Promise<void>;
     /**
      * 列选择器
      */
-    showColumnChooser: () => void;
+    showColumnChooser: () => Promise<void>;
 
     //#region 【自定义导出事件】
     /**
      * 导出所有数据源
      */
-    customExportAll: () => void;
+    customExportAll: () => Promise<void>;
     /**
      * 导出选中数据信息
      */
-    customExportSelect: () => void;
+    customExportSelect: () => Promise<void>;
     /**
      * 导出当前页数据信息
      */
-    customExportPage: () => void;
+    customExportPage: () => Promise<void>;
 
     //#endregion
 }

@@ -2,7 +2,7 @@ import type { Ref } from 'vue';
 import type { BasicDataGridProps, DataGridActionType } from '../types/data-grid';
 import { provide, inject, ComputedRef } from 'vue';
 
-const key = Symbol('devextreme-datagrid');
+const key = Symbol('basic-datagrid');
 
 type Instance = DataGridActionType & {
     wrapRef?: Ref<Nullable<HTMLElement>>;
