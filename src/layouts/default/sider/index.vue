@@ -28,7 +28,7 @@
 
     .@{prefix-cls} {
         .ant-drawer-body {
-            height: 100vh;
+            height: 100%;
             padding: 0;
         }
 

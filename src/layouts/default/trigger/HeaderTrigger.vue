@@ -5,7 +5,6 @@
     </span>
 </template>
 <script lang="ts" name="HeaderTrigger" setup>
-    import { defineProps } from 'vue';
     import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue';
     import { useMenuSetting } from '/@/hooks/setting/useMenuSetting';
     import { useDesign } from '/@/hooks/web/useDesign';

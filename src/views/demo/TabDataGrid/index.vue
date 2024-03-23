@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4">
+    <div class="p-2">
         <BasicToolbar :item="buttonRef" :list-action="actionDataGridRef" :is-to-list="true" />
         <a-tabs v-model:activeKey="activeKey" @tab-click="tabClickFun()">
             <a-tab-pane key="waitTab" :tab="t('components.basic.tab.wait')">

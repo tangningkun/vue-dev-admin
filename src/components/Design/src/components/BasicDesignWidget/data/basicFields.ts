@@ -1,11 +1,13 @@
+import { WidgetTypeEnum } from '../types';
+
 /**
  * 基础组件
  */
-export const basisFields: Array<any> = [
+export const basicFields: Array<any> = [
     {
         type: 'input',
         icon: 'design-input-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -15,7 +17,7 @@ export const basisFields: Array<any> = [
     {
         type: 'textarea',
         icon: 'design-textarea-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -25,7 +27,7 @@ export const basisFields: Array<any> = [
     {
         type: 'number',
         icon: 'design-number-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -35,7 +37,7 @@ export const basisFields: Array<any> = [
     {
         type: 'radio',
         icon: 'design-radio-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -45,7 +47,7 @@ export const basisFields: Array<any> = [
     {
         type: 'checkbox',
         icon: 'design-checkbox-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -55,7 +57,7 @@ export const basisFields: Array<any> = [
     {
         type: 'select',
         icon: 'design-select-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -65,7 +67,7 @@ export const basisFields: Array<any> = [
     {
         type: 'time',
         icon: 'design-time-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -75,7 +77,7 @@ export const basisFields: Array<any> = [
     {
         type: 'time-range',
         icon: 'design-time-range-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -85,7 +87,7 @@ export const basisFields: Array<any> = [
     {
         type: 'date',
         icon: 'design-date-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -95,7 +97,7 @@ export const basisFields: Array<any> = [
     {
         type: 'date-range',
         icon: 'design-date-range-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -105,7 +107,7 @@ export const basisFields: Array<any> = [
     {
         type: 'switch',
         icon: 'design-switch-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -115,7 +117,7 @@ export const basisFields: Array<any> = [
     {
         type: 'rate',
         icon: 'design-rate-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -125,7 +127,7 @@ export const basisFields: Array<any> = [
     {
         type: 'color',
         icon: 'design-color-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -135,7 +137,7 @@ export const basisFields: Array<any> = [
     {
         type: 'slider',
         icon: 'design-slider-field|svg',
-        formItemFlag: true,
+        fieIdType: WidgetTypeEnum.ITEM,
         options: {
             name: '',
             label: '',
@@ -145,7 +147,7 @@ export const basisFields: Array<any> = [
     {
         type: 'button',
         icon: 'design-button-field|svg',
-        formItemFlag: false,
+        fieIdType: false,
         options: {
             name: '',
             label: '',
@@ -155,7 +157,7 @@ export const basisFields: Array<any> = [
     {
         type: 'divider',
         icon: 'design-divider-field|svg',
-        formItemFlag: false,
+        fieIdType: false,
         options: {
             name: '',
             label: '',
@@ -168,5 +170,5 @@ export const basisFields: Array<any> = [
  * @param attribute
  */
 export function addBasisFields(attribute: any) {
-    basisFields.push(attribute);
+    basicFields.push(attribute);
 }

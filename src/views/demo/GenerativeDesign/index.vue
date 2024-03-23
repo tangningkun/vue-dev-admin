@@ -1,5 +1,5 @@
 <template>
-    <div p-4 h-full w-full pos-absolute>
+    <div p-2 h-full w-full pos-absolute>
         <BasicDesign />
     </div>
 </template>

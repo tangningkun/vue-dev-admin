@@ -35,7 +35,7 @@
     );
 
     /**
-     * 监听头部主题转换
+     * 监听头部主题颜色转换
      */
     watch(
         () => appStore.projectConfig?.themeColor,

@@ -1,10 +1,21 @@
+import { WidgetTypeEnum, FieIdTypeAttr, TabTypeEnum } from '../types';
+/**
+  * design-widget-grid.vue
+  * design-widget-table.vue
+  * design-widget-tab.vue
+  * design-widget-card.vue
+  * design-widget-grid-col.vue
+  * design-widget-table-cell.vue
+  * design-widget-tab-pane.vue
+ 
+*/
 /**
  * 布局组件
  */
-export const layoutFields: Array<any> = [
+export const layoutFields: Array<FieIdTypeAttr> = [
     {
         type: 'grid',
-        category: 'container',
+        widgetType: WidgetTypeEnum.CNTR,
         icon: 'design-grid-field|svg',
         cols: [],
         options: {
@@ -17,7 +28,7 @@ export const layoutFields: Array<any> = [
     },
     {
         type: 'table',
-        category: 'container',
+        widgetType: WidgetTypeEnum.CNTR,
         icon: 'design-table-field|svg',
         rows: [],
         options: {
@@ -28,9 +39,9 @@ export const layoutFields: Array<any> = [
     },
     {
         type: 'tab',
-        category: 'container',
+        widgetType: WidgetTypeEnum.CNTR,
         icon: 'design-tab-field|svg',
-        displayType: 'border-card',
+        tabType: TabTypeEnum.line,
         tabs: [],
         options: {
             name: '',
@@ -38,12 +49,11 @@ export const layoutFields: Array<any> = [
             customClass: '', //自定义css类名
         },
     },
-
     {
         type: 'card',
-        category: 'container',
+        widgetType: WidgetTypeEnum.CNTR,
         icon: 'design-card-field|svg',
-        widgetList: [],
+        childList: [],
         options: {
             name: '',
             label: 'card',
@@ -57,10 +67,10 @@ export const layoutFields: Array<any> = [
     },
     {
         type: 'grid-col',
-        category: 'container',
+        widgetType: WidgetTypeEnum.CNTR,
         icon: 'grid-col',
         internal: true,
-        widgetList: [],
+        childList: [],
         options: {
             name: '',
             hidden: false,
@@ -78,10 +88,10 @@ export const layoutFields: Array<any> = [
 
     {
         type: 'table-cell',
-        category: 'container',
+        widgetType: WidgetTypeEnum.CNTR,
         icon: 'table-cell',
         internal: true,
-        widgetList: [],
+        childList: [],
         merged: false,
         options: {
             name: '',
@@ -96,10 +106,10 @@ export const layoutFields: Array<any> = [
 
     {
         type: 'tab-pane',
-        category: 'container',
+        widgetType: WidgetTypeEnum.CNTR,
         icon: 'tab-pane',
         internal: true,
-        widgetList: [],
+        childList: [],
         options: {
             name: '',
             label: '',

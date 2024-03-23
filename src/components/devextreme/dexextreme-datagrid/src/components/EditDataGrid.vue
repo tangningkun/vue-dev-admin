@@ -237,7 +237,7 @@
 
             .dx-scrollable-scrollbars-alwaysvisible.dx-scrollable-both > .dx-scrollable-wrapper > .dx-scrollable-container > .dx-scrollable-content,
             .dx-scrollable-scrollbars-alwaysvisible.dx-scrollable-horizontal > .dx-scrollable-wrapper > .dx-scrollable-container > .dx-scrollable-content {
-                padding-bottom: 0px !important;
+                padding-bottom: 0 !important;
             }
 
             .dx-datagrid-header-panel .dx-toolbar {
@@ -309,15 +309,14 @@
     ::v-deep(.dx-popup-wrapper > .dx-overlay-content) {
         border: 1px solid #ddd;
         background: #fff;
-        -webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
         box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
         border-radius: 6px;
         width: 252px;
         height: 325px;
         z-index: 1501;
-        margin: 0px;
-        left: 0px;
-        top: 0px;
+        margin: 0;
+        left: 0;
+        top: 0;
         transform: translate(380px, 72px) scale(1);
         transition: none 0s ease 0s;
         opacity: 1;

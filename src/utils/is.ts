@@ -3,6 +3,12 @@ const toString = Object.prototype.toString;
 export function is(val: unknown, type: string) {
     return toString.call(val) === `[object ${type}]`;
 }
+export function isStringEmpty(val: unknown): boolean {
+    if (typeof val === 'undefined' || val == null || val == '') {
+        return true;
+    }
+    return false;
+}
 
 export function isDef<T = unknown>(val?: T): val is T {
     return typeof val !== 'undefined';
@@ -71,9 +77,21 @@ export function isBoolean(val: unknown): val is boolean {
 export function isRegExp(val: unknown): val is RegExp {
     return is(val, 'RegExp');
 }
-
+/**
+ * 检查是否为数组
+ * @param val
+ * @returns
+ */
 export function isArray(val: any): val is Array<any> {
     return val && Array.isArray(val);
+}
+/**
+ * 检查数组是否为空
+ * @param val
+ * @returns
+ */
+export function isNotEmptyArray(val: any): val is Array<any> {
+    return isArray(val) && val.length > 0;
 }
 
 export function isWindow(val: any): val is Window {

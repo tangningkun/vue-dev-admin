@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-    <div class="p-4">
+    <div class="p-2">
         <BasicToolbar :item="buttons" />
         <BasicDataGrid @register="register" />
     </div>

@@ -26,3 +26,10 @@ export function buildShortUUID(prefix = ''): string {
     unique++;
     return prefix + '_' + random + unique + String(time);
 }
+/**
+ * 生产随机数
+ * @returns
+ */
+export function buildRandomID(): string {
+    return Math.random().toString(36).slice(-10);
+}

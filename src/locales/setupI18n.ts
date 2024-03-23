@@ -24,7 +24,8 @@ async function createI18nOptions(): Promise<I18nOptions> {
     //#region 【处理devextreme语言】
     /**
      * 想使用动态引用的方法，
-     * @rollup/plugin-dynamic-import-vars改包只支持path 前含'./ or ../'开头 无法支撑
+     * @rollup/plugin-dynamic-import-vars改包只支持path
+     * 前含'./ or ../'开头 无法支撑
      */
     switch (locale) {
         case 'zh_CN': {

@@ -43,7 +43,7 @@ export function useI18n(namespace?: string): {
         if (!key.includes('.') && !namespace) {
             return key;
         }
-        return t(getKey(namespace, key), ...(arg as I18nTranslationRestParameters));
+        return (t as any)(getKey(namespace, key), ...(arg as I18nTranslationRestParameters));
     };
     return {
         ...methods,
